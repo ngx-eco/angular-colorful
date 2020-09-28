@@ -171,6 +171,46 @@
           }
         }
       }
+    },
+    "angular-colorful": {
+      "projectType": "library",
+      "root": "src/angular-colorful",
+      "sourceRoot": "src/angular-colorful/src",
+      "prefix": "",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "src/angular-colorful/tsconfig.lib.json",
+            "project": "src/angular-colorful/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "src/angular-colorful/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/angular-colorful/src/test.ts",
+            "tsConfig": "src/angular-colorful/tsconfig.spec.json",
+            "karmaConfig": "src/angular-colorful/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/angular-colorful/tsconfig.lib.json",
+              "src/angular-colorful/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "angular-colorful-app"
 }
