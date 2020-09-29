@@ -1,0 +1,26 @@
+:host {
+    flex-grow: 1;
+    display: flex;
+}
+
+.saturation {
+    position: relative;
+    flex-grow: 1;
+    border-bottom: 12px solid #000;
+    border-radius: 8px 8px 0 0;
+    background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0)),
+        linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+    /* Improve elements rendering on light backgrounds */
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.interactive {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    /* Don't trigger the default scrolling behavior when the event is originating from this element */
+    touch-action: none;
+}

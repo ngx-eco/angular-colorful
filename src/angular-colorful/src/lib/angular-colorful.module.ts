@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HueComponent } from './components/common/hue/hue.component';
 import { AlphaComponent } from './components/common/alpha/alpha.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
+import { SaturationComponent } from './components/common/saturation/saturation.component';
 import { InteractiveComponent } from './components/common/interactive/interactive.component';
 
 
@@ -14,6 +15,7 @@ import { InteractiveComponent } from './components/common/interactive/interactiv
   declarations: [
     HueComponent,
     AlphaComponent,
+    SaturationComponent,
     ColorPickerComponent,
     InteractiveComponent,
   ],
