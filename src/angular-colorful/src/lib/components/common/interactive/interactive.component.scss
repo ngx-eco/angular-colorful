@@ -39,3 +39,14 @@
 :host-context(.interactive:focus) .pointer {
     transform: translate(-50%, -50%) scale(1.1);
 }
+
+.interactive {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    /* Don't trigger the default scrolling behavior when the event is originating from this element */
+    touch-action: none;
+}

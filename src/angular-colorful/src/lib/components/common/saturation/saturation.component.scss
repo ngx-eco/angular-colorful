@@ -13,14 +13,3 @@
     /* Improve elements rendering on light backgrounds */
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
-
-.interactive {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: inherit;
-    /* Don't trigger the default scrolling behavior when the event is originating from this element */
-    touch-action: none;
-}
