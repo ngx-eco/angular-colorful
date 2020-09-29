@@ -1,0 +1,32 @@
+.alpha:after,
+.alpha-gradient {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Improve elements rendering on light backgrounds */
+.alpha:after {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.alpha {
+    position: relative;
+    height: 24px;
+}
+
+/* Chessboard-like pattern for alpha related elements */
+.alpha-pattern {
+    background-color: #fff;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill-opacity=".05"><rect x="8" width="8" height="8"/><rect y="8" width="8" height="8"/></svg>');
+}
+
+/* Round bottom corners of the last element: `Hue` for `ColorPicker` or `Alpha` for `AlphaColorPicker` */
+.last-control {
+    border-radius: 0 0 8px 8px;
+}

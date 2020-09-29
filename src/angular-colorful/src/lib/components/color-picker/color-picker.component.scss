@@ -17,26 +17,12 @@
         linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
 }
 
-.alpha:after,
-.alphaGradient {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    border-radius: inherit;
-}
-
 /* Improve elements rendering on light backgrounds */
-.alpha:after,
 .saturation {
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
-.hue,
-.alpha {
+.hue {
     position: relative;
     height: 24px;
 }
@@ -68,10 +54,4 @@
     border-radius: inherit;
     /* Don't trigger the default scrolling behavior when the event is originating from this element */
     touch-action: none;
-}
-
-/* Chessboard-like pattern for alpha related elements */
-.alphaPattern {
-    background-color: #fff;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill-opacity=".05"><rect x="8" width="8" height="8"/><rect y="8" width="8" height="8"/></svg>');
 }
