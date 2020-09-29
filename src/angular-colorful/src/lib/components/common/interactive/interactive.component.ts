@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+// Angular
+import { Component, Input, HostListener, OnInit } from '@angular/core';
+
+
 
 @Component({
   selector: 'interactive',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InteractiveComponent implements OnInit {
 
-  constructor() { }
+  @Input() public top: string = '50%';
+  @Input() public left: string = '37%';
+  @Input() public color: string = 'rgb(103, 81, 68)'
+  
 
   ngOnInit(): void {
   }
