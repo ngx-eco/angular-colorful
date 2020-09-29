@@ -1,5 +1,6 @@
 // Angular
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 // Project
 import { AlphaComponent } from './components/common/alpha/alpha.component';
@@ -14,7 +15,9 @@ import { InteractiveComponent } from './components/common/interactive/interactiv
     ColorPickerComponent,
     InteractiveComponent,
   ],
-  imports: [],
+  imports: [
+    CommonModule,
+  ],
   exports: [
     ColorPickerComponent,
   ]
