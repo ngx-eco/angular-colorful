@@ -1,5 +1,8 @@
 // Angular
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
+
+// Angular
+import { HsvaColor } from '../../interfaces/color-types';
 
 
 
@@ -8,12 +11,26 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './color-picker.component.html',
   styleUrls: ['./color-picker.component.scss']
 })
-export class ColorPickerComponent implements OnInit {
+export class ColorPickerComponent implements OnInit, DoCheck {
 
-  constructor(
-  ) { }
+  private _color: HsvaColor;
 
+  @Input() public set color(color: HsvaColor) {
+    this._color = color;
+  }
+  
+  public get color(): HsvaColor {
+    return this._color;
+  }
+
+  constructor() { }
+  
   ngOnInit(): void {
+  }
+
+  ngDoCheck() {
+    // console.log(this.color);
+    
   }
 
 }
