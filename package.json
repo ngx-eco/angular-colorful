@@ -17,6 +17,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "e2e": "ng e2e",
     "ngcc": "ngcc",
     "dev:ssr": "ng run angular-colorful-app:serve-ssr",
