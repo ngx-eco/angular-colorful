@@ -1,9 +1,9 @@
-import { RgbaColor, RgbColor, HslaColor, HslColor, HsvaColor, HsvColor } from "../interfaces/color-types";
+import { RgbaColor, RgbColor, HslaColor, HslColor, HsvaColor, HsvColor } from '../interfaces/color-types';
 
 export const hexToHsva = (hex: string): HsvaColor => rgbaToHsva(hexToRgba(hex));
 
 export const hexToRgba = (hex: string): RgbaColor => {
-  if (hex[0] === "#") hex = hex.substr(1);
+  if (hex[0] === '#') hex = hex.substr(1);
 
   if (hex.length < 6) {
     return {
@@ -145,11 +145,11 @@ export const rgbStringToHsva = rgbaStringToHsva;
 
 const format = (number: number) => {
   const hex = number.toString(16);
-  return hex.length < 2 ? "0" + hex : hex;
+  return hex.length < 2 ? '0' + hex : hex;
 };
 
 export const rgbaToHex = ({ r, g, b }: RgbaColor): string => {
-  return "#" + format(r) + format(g) + format(b);
+  return '#' + format(r) + format(g) + format(b);
 };
 
 export const rgbaToHsva = ({ r, g, b, a }: RgbaColor): HsvaColor => {

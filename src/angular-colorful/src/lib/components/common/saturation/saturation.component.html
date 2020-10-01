@@ -1,3 +1,3 @@
-<div class="saturation" [ngStyle]="{'background-color': bgColor}">
-    <interactive [top]="top" [left]="left" [color]="bgColor"></interactive>
+<div class="saturation" [ngStyle]="{'background-color': grColor}">
+    <interactive [top]="top" [left]="left" [color]="bgColor" (onMove)="move($event)"></interactive>
 </div>

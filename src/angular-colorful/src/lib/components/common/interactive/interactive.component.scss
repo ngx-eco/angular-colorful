@@ -1,3 +1,13 @@
+:host {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    touch-action: none;    
+}
+
 .pointer {
     position: absolute;
     z-index: 1;
@@ -36,6 +46,10 @@
     z-index: 2;
 }
 
+:host-context(.alpha) .pointer {
+    @extend .alpha-pattern;
+}
+
 :host-context(.interactive:focus) .pointer {
     transform: translate(-50%, -50%) scale(1.1);
 }
@@ -49,4 +63,9 @@
     border-radius: inherit;
     /* Don't trigger the default scrolling behavior when the event is originating from this element */
     touch-action: none;
+}
+
+.alpha-pattern {
+    background-color: #fff;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill-opacity=".05"><rect x="8" width="8" height="8"/><rect y="8" width="8" height="8"/></svg>');
 }

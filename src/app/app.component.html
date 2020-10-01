@@ -1,3 +1,6 @@
-<color-picker [color]="color"></color-picker>
+<color-picker [color]="color" (onColorChanged)="colorChanged(color)"></color-picker>
 
-<div [ngStyle]="{'background': appColor}"></div>
+<div [ngStyle]="{'background': appColor}">
+    <main>{{color | json}}</main>
+    <main>{{appColor}}</main>
+</div>

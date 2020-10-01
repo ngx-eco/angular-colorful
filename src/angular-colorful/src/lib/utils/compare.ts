@@ -1,5 +1,5 @@
-import { hexToRgba } from "./convert";
-import { ObjectColor } from "../interfaces/color-types";
+import { hexToRgba } from './convert';
+import { ObjectColor } from '../interfaces/color-types';
 
 export const equalColorObjects = (first: ObjectColor, second: ObjectColor): boolean => {
   if (first === second) return true;
@@ -14,14 +14,14 @@ export const equalColorObjects = (first: ObjectColor, second: ObjectColor): bool
       ((first as unknown) as Record<string, number>)[prop] !==
       ((second as unknown) as Record<string, number>)[prop]
     )
-      return false;
+    return false;
   }
 
   return true;
 };
 
 export const equalColorString = (first: string, second: string): boolean => {
-  return first.replace(/\s/g, "") === second.replace(/\s/g, "");
+  return first.replace(/\s/g, '') === second.replace(/\s/g, '');
 };
 
 export const equalHex = (first: string, second: string): boolean => {
