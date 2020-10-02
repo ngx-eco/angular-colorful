@@ -9,6 +9,7 @@ import { SaturationComponent } from './components/common/saturation/saturation.c
 import { InteractiveComponent } from './components/common/interactive/interactive.component';
 import { ColorPickerComponent } from './components/common/color-picker/color-picker.component';
 import { RgbColorPickerComponent } from './components/rgb-color-picker/rgb-color-picker.component';
+import { AlphaColorPickerComponent } from './components/common/alpha-color-picker/alpha-color-picker.component';
 
 
 
@@ -20,6 +21,7 @@ import { RgbColorPickerComponent } from './components/rgb-color-picker/rgb-color
     ColorPickerComponent,
     InteractiveComponent,
     RgbColorPickerComponent,
+    AlphaColorPickerComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { RgbColorPickerComponent } from './components/rgb-color-picker/rgb-color
   exports: [
     ColorPickerComponent,
     RgbColorPickerComponent,
+    AlphaColorPickerComponent,
   ]
 })
 export class AngularColorfulModule { }

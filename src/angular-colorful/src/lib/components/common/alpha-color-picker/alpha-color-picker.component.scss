@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
