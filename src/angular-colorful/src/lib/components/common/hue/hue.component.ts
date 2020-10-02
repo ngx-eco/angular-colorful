@@ -2,7 +2,7 @@
 import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 // Project
-import { HsvaColor } from '../../../interfaces/color-types';
+import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 import { hsvaToHslString } from '../../../utils/convert';
 
 

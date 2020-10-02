@@ -7,7 +7,15 @@ export * from './lib/components/rgb-color-picker/rgb-color-picker.component';
 export * from './lib/components/common/alpha-color-picker/alpha-color-picker.component';
 
 // Interfaces
-export * from './lib/interfaces/color-types';
+export * from './lib/interfaces/rgb-color.interface';
+export * from './lib/interfaces/hsl-color.interface';
+export * from './lib/interfaces/hsv-color.interface';
+export * from './lib/interfaces/any-color.interface';
+export * from './lib/interfaces/rgba-color.interface';
+export * from './lib/interfaces/hsla-color.interface';
+export * from './lib/interfaces/hsva-color.interface';
+export * from './lib/interfaces/color-model.interface';
+export * from './lib/interfaces/object-color.interface';
 
 // Utils
 export * from './lib/utils/clamp';

@@ -3,7 +3,7 @@ import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angula
 
 // Project
 import { hsvaToHslString } from '../../../utils/convert';
-import { HsvaColor } from '../../../interfaces/color-types';
+import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 
 
 

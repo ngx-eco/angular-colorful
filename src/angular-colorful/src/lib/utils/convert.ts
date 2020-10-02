@@ -1,4 +1,12 @@
-import { RgbaColor, RgbColor, HslaColor, HslColor, HsvaColor, HsvColor } from '../interfaces/color-types';
+// Project
+import { RgbColor } from '../interfaces/rgb-color.interface';
+import { HslColor } from '../interfaces/hsl-color.interface';
+import { HsvColor } from '../interfaces/hsv-color.interface';
+import { RgbaColor } from '../interfaces/rgba-color.interface';
+import { HslaColor } from '../interfaces/hsla-color.interface';
+import { HsvaColor } from '../interfaces/hsva-color.interface';
+
+
 
 export const hexToHsva = (hex: string): HsvaColor => rgbaToHsva(hexToRgba(hex));
 
