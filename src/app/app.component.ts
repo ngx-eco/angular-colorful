@@ -14,6 +14,7 @@ import { HsvaColor, hsvaToHslaString, RgbaColor, rgbaToHsva } from 'angular-colo
 export class AppComponent implements OnInit {
 
   public appColor: string;
+  public textColor: string;
   private _color: HsvaColor;
 
   public set color(color: HsvaColor) {
@@ -30,9 +31,13 @@ export class AppComponent implements OnInit {
   }
 
   colorChanged(color): void {
+    this.textColor = this.getBrightness(color) > 128 || color.a < 0.5 ? "#000" : "#FFF";
     this.appColor = hsvaToHslaString(color);
     this.color = color;
   }
+  
+  // See http://www.w3.org/TR/AERT#color-contrast
+  getBrightness = ({ r, g, b }: RgbaColor) => (r * 299 + g * 587 + b * 114) / 1000;
 
   getRandomColor = (): RgbaColor => {
     const colors = [

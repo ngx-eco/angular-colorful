@@ -1,6 +1,46 @@
-<color-picker [color]="color" (onColorChanged)="colorChanged(color)"></color-picker>
-
 <div [ngStyle]="{'background': appColor}">
-    <main>{{color | json}}</main>
-    <main>{{appColor}}</main>
+    <header class="header" [ngStyle]="{'color': textColor}">
+        <div class="demo">
+            <color-picker
+                class="color--picker"
+                [color]="color"
+                (onColorChanged)="colorChanged(color)">
+            </color-picker>
+        </div>
+        <div class="header--content">
+            <h1 class="header--title">Angular Colorful 🎨</h1>
+            <h2 class="header--description">
+                A tiny color picker component for modern Angular apps. Port of
+                <a 
+                    href="https://github.com/omgovich/react-colorful"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    React Colorful
+                </a>
+                to Angular module.
+            </h2>
+            <nav class="links">
+                <a
+                    class="link"
+                    href="https://github.com/omgovich/react-colorful"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    GitHub
+                    <!-- <span class="link--separator"></span> -->
+                    <!-- <Star class="linkIcon"></Star> -->
+                    <!-- {stargazerCount} -->
+                </a>
+                <a
+                    class="link"
+                    href="https://www.npmjs.com/package/react-colorful"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    NPM
+                </a>
+            </nav>
+        </div>
+    </header>
 </div>
