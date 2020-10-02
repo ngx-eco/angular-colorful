@@ -1,11 +1,11 @@
 <div [ngStyle]="{'background': appColor}">
     <header class="header" [ngStyle]="{'color': textColor}">
         <div class="demo">
-            <color-picker
+            <alpha-color-picker
                 class="color--picker"
                 [color]="color"
                 (onColorChanged)="colorChanged(color)">
-            </color-picker>
+            </alpha-color-picker>
         </div>
         <div class="header--content">
             <h1 class="header--title">Angular Colorful 🎨</h1>
