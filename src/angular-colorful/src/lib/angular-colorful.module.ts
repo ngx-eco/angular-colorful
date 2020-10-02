@@ -27,9 +27,7 @@ import { AlphaColorPickerComponent } from './components/common/alpha-color-picke
     CommonModule,
   ],
   exports: [
-    ColorPickerComponent,
     RgbColorPickerComponent,
-    AlphaColorPickerComponent,
   ]
 })
 export class AngularColorfulModule { }
