@@ -2,7 +2,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 // Angular
-import { HsvaColor } from '../../interfaces/color-types';
+import { HsvaColor } from '../../../interfaces/color-types';
 
 
 
