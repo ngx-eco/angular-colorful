@@ -9,6 +9,7 @@ export * from './lib/components/hsla-color-picker/hsla-color-picker.component';
 export * from './lib/components/rgb-string-color-picker/rgb-string-color-picker.component';
 export * from './lib/components/hsl-string-color-picker/hsl-string-color-picker.component';
 export * from './lib/components/rgba-string-color-picker/rgba-string-color-picker.component';
+export * from './lib/components/hsla-string-color-picker/hsla-string-color-picker.component';
 
 // Interfaces
 export * from './lib/interfaces/rgb-color.interface';

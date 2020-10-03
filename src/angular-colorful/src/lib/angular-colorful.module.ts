@@ -16,6 +16,7 @@ import { AlphaColorPickerComponent } from './components/common/alpha-color-picke
 import { RgbStringColorPickerComponent } from './components/rgb-string-color-picker/rgb-string-color-picker.component';
 import { HslStringColorPickerComponent } from './components/hsl-string-color-picker/hsl-string-color-picker.component';
 import { RgbaStringColorPickerComponent } from './components/rgba-string-color-picker/rgba-string-color-picker.component';
+import { HslaStringColorPickerComponent } from './components/hsla-string-color-picker/hsla-string-color-picker.component';
 
 
 
@@ -34,6 +35,7 @@ import { RgbaStringColorPickerComponent } from './components/rgba-string-color-p
     RgbStringColorPickerComponent,
     HslStringColorPickerComponent,
     RgbaStringColorPickerComponent,
+    HslaStringColorPickerComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +48,7 @@ import { RgbaStringColorPickerComponent } from './components/rgba-string-color-p
     RgbStringColorPickerComponent,
     HslStringColorPickerComponent,
     RgbaStringColorPickerComponent,
+    HslaStringColorPickerComponent,
   ]
 })
 export class AngularColorfulModule { }
