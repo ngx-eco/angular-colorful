@@ -70,4 +70,13 @@
         ></rgba-color-picker>
         <div class="preview--output">{{getName('rgba')}}</div>
     </div>
+    <div class="preview">
+        <div class="preview--title">{{colors.rgbaString.name}}</div>
+        <rgba-string-color-picker
+            class="preview--demo"
+            color="rgba(60, 80, 120, 0.5)"
+            (onColorChanged)="colorsChanged($event, 'rgbaString')"
+        ></rgba-string-color-picker>
+        <div class="preview--output">{{getName('rgbaString')}}</div>
+    </div>
 </div>
