@@ -53,6 +53,15 @@
         <div class="preview--output">{{getName('rgb')}}</div>
     </div>
     <div class="preview">
+        <div class="preview--title">{{colors.rgbString.name}}</div>
+        <rgb-string-color-picker
+            class="preview--demo"
+            color="rgb(60, 80, 120)"
+            (onColorChanged)="colorsChanged($event, 'rgbString')"
+        ></rgb-string-color-picker>
+        <div class="preview--output">{{getName('rgbString')}}</div>
+    </div>
+    <div class="preview">
         <div class="preview--title">{{colors.rgba.name}}</div>
         <rgba-color-picker 
             class="preview--demo"
