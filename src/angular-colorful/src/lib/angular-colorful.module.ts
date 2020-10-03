@@ -10,6 +10,7 @@ import { InteractiveComponent } from './components/common/interactive/interactiv
 import { ColorPickerComponent } from './components/common/color-picker/color-picker.component';
 import { RgbColorPickerComponent } from './components/rgb-color-picker/rgb-color-picker.component';
 import { HslColorPickerComponent } from './components/hsl-color-picker/hsl-color-picker.component';
+import { HsvColorPickerComponent } from './components/hsv-color-picker/hsv-color-picker.component';
 import { RgbaColorPickerComponent } from './components/rgba-color-picker/rgba-color-picker.component';
 import { HslaColorPickerComponent } from './components/hsla-color-picker/hsla-color-picker.component';
 import { AlphaColorPickerComponent } from './components/common/alpha-color-picker/alpha-color-picker.component';
@@ -29,6 +30,7 @@ import { HslaStringColorPickerComponent } from './components/hsla-string-color-p
     InteractiveComponent,
     RgbColorPickerComponent,
     HslColorPickerComponent,
+    HsvColorPickerComponent,
     RgbaColorPickerComponent,
     HslaColorPickerComponent,
     AlphaColorPickerComponent,
@@ -43,6 +45,7 @@ import { HslaStringColorPickerComponent } from './components/hsla-string-color-p
   exports: [
     RgbColorPickerComponent,
     HslColorPickerComponent,
+    HsvColorPickerComponent,
     RgbaColorPickerComponent,
     HslaColorPickerComponent,
     RgbStringColorPickerComponent,
