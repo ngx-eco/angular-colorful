@@ -44,6 +44,15 @@
         </div>
     </header>
     <div class="preview">
+        <div class="preview--title">{{colors.hex.name}}</div>
+        <hex-color-picker 
+            class="preview--demo"
+            color="#406090"
+            (onColorChanged)="colorsChanged($event, 'hex')"
+        ></hex-color-picker>
+        <div class="preview--output">{{getName('hex')}}</div>
+    </div>
+    <div class="preview">
         <div class="preview--title">{{colors.rgb.name}}</div>
         <rgb-color-picker 
             class="preview--demo"

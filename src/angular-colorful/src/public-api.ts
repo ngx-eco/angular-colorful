@@ -2,6 +2,7 @@
 export * from './lib/angular-colorful.module';
 
 // Components
+export * from './lib/components/hex-color-picker/hex-color-picker.component';
 export * from './lib/components/rgb-color-picker/rgb-color-picker.component';
 export * from './lib/components/hsl-color-picker/hsl-color-picker.component';
 export * from './lib/components/hsv-color-picker/hsv-color-picker.component';

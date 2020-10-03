@@ -8,6 +8,7 @@ import { AlphaComponent } from './components/common/alpha/alpha.component';
 import { SaturationComponent } from './components/common/saturation/saturation.component';
 import { InteractiveComponent } from './components/common/interactive/interactive.component';
 import { ColorPickerComponent } from './components/common/color-picker/color-picker.component';
+import { HexColorPickerComponent } from './components/hex-color-picker/hex-color-picker.component';
 import { RgbColorPickerComponent } from './components/rgb-color-picker/rgb-color-picker.component';
 import { HslColorPickerComponent } from './components/hsl-color-picker/hsl-color-picker.component';
 import { HsvColorPickerComponent } from './components/hsv-color-picker/hsv-color-picker.component';
@@ -31,6 +32,7 @@ import { HsvaStringColorPickerComponent } from './components/hsva-string-color-p
     SaturationComponent,
     ColorPickerComponent,
     InteractiveComponent,
+    HexColorPickerComponent,
     RgbColorPickerComponent,
     HslColorPickerComponent,
     HsvColorPickerComponent,
@@ -49,6 +51,7 @@ import { HsvaStringColorPickerComponent } from './components/hsva-string-color-p
     CommonModule,
   ],
   exports: [
+    HexColorPickerComponent,
     RgbColorPickerComponent,
     HslColorPickerComponent,
     HsvColorPickerComponent,
