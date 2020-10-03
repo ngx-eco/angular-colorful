@@ -7,6 +7,7 @@ export * from './lib/components/hsl-color-picker/hsl-color-picker.component';
 export * from './lib/components/hsv-color-picker/hsv-color-picker.component';
 export * from './lib/components/rgba-color-picker/rgba-color-picker.component';
 export * from './lib/components/hsla-color-picker/hsla-color-picker.component';
+export * from './lib/components/hsva-color-picker/hsva-color-picker.component';
 export * from './lib/components/rgb-string-color-picker/rgb-string-color-picker.component';
 export * from './lib/components/hsl-string-color-picker/hsl-string-color-picker.component';
 export * from './lib/components/hsv-string-color-picker/hsv-string-color-picker.component';

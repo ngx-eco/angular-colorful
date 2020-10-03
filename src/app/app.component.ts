@@ -38,6 +38,7 @@ export class AppComponent implements OnInit {
     hsvString: {name: 'HSV String', value: 'hsv(200, 25, 50)'},
     rgba: {name: 'RGBA', value: { r: 60, g: 80, b: 120, a: 0.5 }},
     hsla: {name: 'HSLA', value: { h: 200, s: 25, l: 32, a: 0.5 }},
+    hsva: {name: 'HSVA', value: { h: 200, s: 25, v: 50, a: 0.5 }},
     rgbaString: {name: 'RGBA String', value: 'rgba(60, 80, 120, 0.5)'},
     hslaString: {name: 'HSLA String', value: 'hsla(200, 25, 32, 0.5)'},
   }
