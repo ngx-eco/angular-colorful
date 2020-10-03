@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 // Project
-import { hsvaToRgbaString, RgbaColor, rgbaToHsva, RgbColor } from 'angular-colorful';
+import { hsvaToRgbaString, RgbaColor, rgbaToHsva } from 'angular-colorful';
 
 
 
@@ -18,19 +18,20 @@ export class AppComponent implements OnInit {
 
   public appColor: string;
   public textColor: string;
-  private _color: RgbColor;
+  private _color: RgbaColor;
 
-  public set color(color: RgbColor) {
-    this.appColor = `rgba(${color.r}, ${color.g}, ${color.b}, 1`;
+  public set color(color: RgbaColor) {
+    this.appColor = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a}`;
     this._color = color;
   }
 
-  public get color(): RgbColor {
+  public get color(): RgbaColor {
     return this._color;
   }
 
   public colors = {
     rgb: {name: 'RGB', value: { r: 60, g: 80, b: 120 }},
+    rgba: {name: 'RGBA', value: { r: 60, g: 80, b: 120, a: 0.5 }},
   }
 
   ngOnInit(): void {
@@ -48,7 +49,7 @@ export class AppComponent implements OnInit {
 
   colorChanged(color): void {
     this.textColor = this.getBrightness(color) > 128 || color.a < 0.5 ? "#000" : "#FFF";
-    this.appColor = (hsvaToRgbaString(rgbaToHsva({ r: color.r, g: color.g, b: color.b, a: 1})));
+    this.appColor = (hsvaToRgbaString(rgbaToHsva({ r: color.r, g: color.g, b: color.b, a: color.a})));
   }
   
   // See http://www.w3.org/TR/AERT#color-contrast

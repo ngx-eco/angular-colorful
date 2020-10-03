@@ -1,11 +1,11 @@
 <div [ngStyle]="{'background': appColor}">
     <header class="header" [ngStyle]="{'color': textColor}">
         <div class="demo">
-            <rgb-color-picker
+            <rgba-color-picker
                 class="color--picker"
                 [color]="color"
                 (onColorChanged)="colorChanged($event)">
-            </rgb-color-picker>
+            </rgba-color-picker>
         </div>
         <div class="header--content">
             <h1 class="header--title">Angular Colorful 🎨</h1>
@@ -51,5 +51,14 @@
             (onColorChanged)="colorsChanged($event, 'rgb')"
         ></rgb-color-picker>
         <div class="preview--output">{{getName('rgb')}}</div>
+    </div>
+    <div class="preview">
+        <div class="preview--title">{{colors.rgba.name}}</div>
+        <rgba-color-picker 
+            class="preview--demo"
+            [color]="{ r: 60, g: 80, b: 120, a: 0.5 }"
+            (onColorChanged)="colorsChanged($event, 'rgba')"
+        ></rgba-color-picker>
+        <div class="preview--output">{{getName('rgba')}}</div>
     </div>
 </div>
