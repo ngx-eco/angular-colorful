@@ -1,7 +1,7 @@
 {
   "name": "angular-colorful",
   "version": "0.0.1",
-  "description": "Angular module for creating themes in angular applications using native css variables",
+  "description": "A tiny color picker component for modern Angular apps",
   "author": "fil0157 <fil0157@ya.ru>",
   "license": "MIT",
   "repository": {
@@ -100,5 +100,13 @@
     "module",
     "css",
     "scss"
-  ]
+  ],
+  "main": "bundles/angular-colorful.umd.js",
+  "module": "fesm2015/angular-colorful.js",
+  "es2015": "fesm2015/angular-colorful.js",
+  "esm2015": "esm2015/angular-colorful.js",
+  "fesm2015": "fesm2015/angular-colorful.js",
+  "typings": "angular-colorful.d.ts",
+  "metadata": "angular-colorful.metadata.json",
+  "sideEffects": false
 }
