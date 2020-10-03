@@ -13,6 +13,7 @@ export * from './lib/components/hsl-string-color-picker/hsl-string-color-picker.
 export * from './lib/components/hsv-string-color-picker/hsv-string-color-picker.component';
 export * from './lib/components/rgba-string-color-picker/rgba-string-color-picker.component';
 export * from './lib/components/hsla-string-color-picker/hsla-string-color-picker.component';
+export * from './lib/components/hsva-string-color-picker/hsva-string-color-picker.component';
 
 // Interfaces
 export * from './lib/interfaces/rgb-color.interface';

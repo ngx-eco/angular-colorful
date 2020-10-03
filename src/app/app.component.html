@@ -142,4 +142,13 @@
         ></hsva-color-picker>
         <div class="preview--output">{{getName('hsva')}}</div>
     </div>
+    <div class="preview">
+        <div class="preview--title">{{colors.hsvaString.name}}</div>
+        <hsva-string-color-picker
+            class="preview--demo"
+            color="hsva(200, 25, 50, 0.5)"
+            (onColorChanged)="colorsChanged($event, 'hsvaString')"
+        ></hsva-string-color-picker>
+        <div class="preview--output">{{getName('hsvaString')}}</div>
+    </div>
 </div>
