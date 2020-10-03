@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Project
-import { HsvaColor, hsvaToHslaString, RgbaColor, rgbaToHsva } from 'angular-colorful';
+import { hsvaToRgbaString, RgbaColor, rgbaToHsva, RgbColor } from 'angular-colorful';
 
 
 
@@ -15,25 +15,24 @@ export class AppComponent implements OnInit {
 
   public appColor: string;
   public textColor: string;
-  private _color: HsvaColor;
+  private _color: RgbColor;
 
-  public set color(color: HsvaColor) {
-    this.appColor = hsvaToHslaString(color);
+  public set color(color: RgbColor) {
+    this.appColor = `rgba(${color.r}, ${color.g}, ${color.b}, 1`;
     this._color = color;
   }
 
-  public get color(): HsvaColor {
+  public get color(): RgbColor {
     return this._color;
   }
 
   ngOnInit(): void {
-    this.color = rgbaToHsva(this.getRandomColor());
+    this.color = this.getRandomColor();
   }
 
   colorChanged(color): void {
     this.textColor = this.getBrightness(color) > 128 || color.a < 0.5 ? "#000" : "#FFF";
-    this.appColor = hsvaToHslaString(color);
-    this.color = color;
+    this.appColor = (hsvaToRgbaString(rgbaToHsva({ r: color.r, g: color.g, b: color.b, a: 1})));
   }
   
   // See http://www.w3.org/TR/AERT#color-contrast
@@ -46,6 +45,9 @@ export class AppComponent implements OnInit {
       { r: 225, g: 17, b: 135, a: 0.7625 }, // purple
       { r: 21, g: 139, b: 59, a: 1 }, // green
       { r: 189, g: 60, b: 60, a: 1 }, // salmon
+      { r: 128, g: 128, b: 0, a: 1 }, // olive
+      { r: 0, g: 128, b: 128, a: 1 }, // blue-green
+      { r: 128, g: 0, b: 128, a: 1 }, // purple
     ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
