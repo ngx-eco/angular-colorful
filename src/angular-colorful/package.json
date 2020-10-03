@@ -1,11 +1,50 @@
 {
   "name": "angular-colorful",
   "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^10.1.3",
-    "@angular/core": "^10.1.3"
+  "description": "A tiny color picker component for modern Angular apps",
+  "author": "fil0157 <fil0157@ya.ru>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fil0157/angular-colorful.git"
   },
-  "dependencies": {
-    "tslib": "^2.0.0"
-  }
+  "homepage": "https://fil0157.github.io/angular-colorful",
+  "bugs": {
+    "url": "https://github.com/fil0157/angular-colorful/issues"
+  },
+  "keywords": [
+    "angular",
+    "angular-component",
+    "angular component",
+    "angular-color",
+    "angular color",
+    "angular-colorful",
+    "angular colorful",
+    "ngx",
+    "ngx-color",
+    "ngx color",
+    "color",
+    "color-picker",
+    "color picker",
+    "colorpicker",
+    "tiny",
+    "hex",
+    "front-end",
+    "frontand",
+    "typescript",
+    "javascript",
+    "js",
+    "ts",
+    "module",
+    "css",
+    "scss"
+  ],
+  "main": "bundles/angular-colorful.umd.js",
+  "module": "fesm2015/angular-colorful.js",
+  "es2015": "fesm2015/angular-colorful.js",
+  "esm2015": "esm2015/angular-colorful.js",
+  "fesm2015": "fesm2015/angular-colorful.js",
+  "typings": "angular-colorful.d.ts",
+  "metadata": "angular-colorful.metadata.json",
+  "sideEffects": false
 }
