@@ -79,4 +79,13 @@
         ></rgba-string-color-picker>
         <div class="preview--output">{{getName('rgbaString')}}</div>
     </div>
+    <div class="preview">
+        <div class="preview--title">{{colors.hsl.name}}</div>
+        <hsl-color-picker 
+            class="preview--demo"
+            [color]="{ h: 200, s: 25, l: 32 }"
+            (onColorChanged)="colorsChanged($event, 'hsl')"
+        ></hsl-color-picker>
+        <div class="preview--output">{{getName('hsl')}}</div>
+    </div>
 </div>

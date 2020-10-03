@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
 
   public colors = {
     rgb: {name: 'RGB', value: { r: 60, g: 80, b: 120 }},
+    hsl: {name: 'HSL', value: { h: 200, s: 25, l: 32 }},
     rgbString: {name: 'RGB String', value: 'rgba(60, 80, 120)'},
     rgba: {name: 'RGBA', value: { r: 60, g: 80, b: 120, a: 0.5 }},
     rgbaString: {name: 'RGBA String', value: 'rgba(60, 80, 120, 0.5)'},

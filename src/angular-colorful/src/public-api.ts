@@ -3,6 +3,7 @@ export * from './lib/angular-colorful.module';
 
 // Components
 export * from './lib/components/rgb-color-picker/rgb-color-picker.component';
+export * from './lib/components/hsl-color-picker/hsl-color-picker.component';
 export * from './lib/components/rgba-color-picker/rgba-color-picker.component';
 export * from './lib/components/rgb-string-color-picker/rgb-string-color-picker.component';
 export * from './lib/components/rgba-string-color-picker/rgba-string-color-picker.component';
