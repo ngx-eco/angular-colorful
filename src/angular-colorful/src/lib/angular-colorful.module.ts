@@ -13,6 +13,7 @@ import { HslColorPickerComponent } from './components/hsl-color-picker/hsl-color
 import { RgbaColorPickerComponent } from './components/rgba-color-picker/rgba-color-picker.component';
 import { AlphaColorPickerComponent } from './components/common/alpha-color-picker/alpha-color-picker.component';
 import { RgbStringColorPickerComponent } from './components/rgb-string-color-picker/rgb-string-color-picker.component';
+import { HslStringColorPickerComponent } from './components/hsl-string-color-picker/hsl-string-color-picker.component';
 import { RgbaStringColorPickerComponent } from './components/rgba-string-color-picker/rgba-string-color-picker.component';
 
 
@@ -29,6 +30,7 @@ import { RgbaStringColorPickerComponent } from './components/rgba-string-color-p
     RgbaColorPickerComponent,
     AlphaColorPickerComponent,
     RgbStringColorPickerComponent,
+    HslStringColorPickerComponent,
     RgbaStringColorPickerComponent,
   ],
   imports: [
@@ -39,6 +41,7 @@ import { RgbaStringColorPickerComponent } from './components/rgba-string-color-p
     HslColorPickerComponent,
     RgbaColorPickerComponent,
     RgbStringColorPickerComponent,
+    HslStringColorPickerComponent,
     RgbaStringColorPickerComponent,
   ]
 })

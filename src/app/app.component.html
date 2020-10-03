@@ -88,4 +88,13 @@
         ></hsl-color-picker>
         <div class="preview--output">{{getName('hsl')}}</div>
     </div>
+    <div class="preview">
+        <div class="preview--title">{{colors.hslString.name}}</div>
+        <hsl-string-color-picker
+            class="preview--demo"
+            color="hsl(200, 25, 32)"
+            (onColorChanged)="colorsChanged($event, 'hslString')"
+        ></hsl-string-color-picker>
+        <div class="preview--output">{{getName('hslString')}}</div>
+    </div>
 </div>
