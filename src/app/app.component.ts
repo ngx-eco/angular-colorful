@@ -1,5 +1,6 @@
 // Angular
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 // Project
 import { hsvaToRgbaString, RgbaColor, rgbaToHsva, RgbColor } from 'angular-colorful';
@@ -12,6 +13,8 @@ import { hsvaToRgbaString, RgbaColor, rgbaToHsva, RgbColor } from 'angular-color
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+  public readonly env = environment;
 
   public appColor: string;
   public textColor: string;
@@ -26,8 +29,21 @@ export class AppComponent implements OnInit {
     return this._color;
   }
 
+  public colors = {
+    rgb: {name: 'RGB', value: { r: 60, g: 80, b: 120 }},
+  }
+
   ngOnInit(): void {
     this.color = this.getRandomColor();
+  }
+
+  public getName(type) {
+    if (typeof this.colors[type].value === 'string') return this.colors[type].value
+    else return JSON.stringify(this.colors[type].value)
+  }
+
+  colorsChanged(color, type): void {
+    this.colors[type].value = color;
   }
 
   colorChanged(color): void {

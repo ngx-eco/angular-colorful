@@ -43,4 +43,13 @@
             </nav>
         </div>
     </header>
+    <div class="preview">
+        <div class="preview--title">{{colors.rgb.name}}</div>
+        <rgb-color-picker 
+            class="preview--demo"
+            [color]="{ r: 60, g: 80, b: 120 }"
+            (onColorChanged)="colorsChanged($event, 'rgb')"
+        ></rgb-color-picker>
+        <div class="preview--output">{{getName('rgb')}}</div>
+    </div>
 </div>
