@@ -20,6 +20,8 @@ export class InteractiveComponent implements OnInit {
 
   element: HTMLElement;
 
+  hasTouched = false;
+
   constructor(
     private el: ElementRef,
   ) {
@@ -29,11 +31,11 @@ export class InteractiveComponent implements OnInit {
   @Output() onMove = new EventEmitter();
 
   @HostListener('mousedown', ['$event']) onMouseDown($event) {
-    this.getRelativePosition(this.element as HTMLDivElement, $event);
+    this.handleEvent($event)
   }
 
-  @HostListener('mousemove', ['$event']) onMouseMove($event) {
-    this.getRelativePosition(this.element as HTMLDivElement, $event);
+  @HostListener('touchstart', ['$event']) onTouchStart($event) {
+    this.handleEvent($event)
   }
 
   ngOnInit(): void {
@@ -49,6 +51,44 @@ export class InteractiveComponent implements OnInit {
       top: clamp(Math.round((100 * (pointer.clientY - rect.top)) / node.clientHeight), 0, 100),
     }
     this.onMove.emit(interactive);
+  }
+
+  limit = (number: number) => (number > 1 ? 1 : number < 0 ? 0 : number);
+
+  // Prevent mobile browsers from handling mouse events (conflicting with touch ones).
+  // If we detected a touch interaction before, we prefer reacting to touch events only.
+  isValid = (event: MouseEvent | TouchEvent): boolean => {
+    if (this.hasTouched && !this.isTouch(event)) return false;
+    if (!this.hasTouched) this.hasTouched = this.isTouch(event);
+    return true;
+  };
+
+  set dragging(state: boolean) {
+    const toggleEvent = state ? document.addEventListener : document.removeEventListener;
+    toggleEvent(this.hasTouched ? 'touchmove' : 'mousemove', this);
+    toggleEvent(this.hasTouched ? 'touchend' : 'mouseup', this);
+  }
+
+  handleEvent(event: MouseEvent | TouchEvent): void {
+    switch (event.type) {
+      case 'mousedown':
+      case 'touchstart':
+        event.preventDefault();
+        // event.button is 0 in mousedown for left button activation
+        if (!this.isValid(event) || (!this.hasTouched && (event as MouseEvent).button != 0)) return;
+        this.getRelativePosition(this.element as HTMLDivElement, event);
+        this.dragging = true;
+        break;
+      case 'mousemove':
+      case 'touchmove':
+        event.preventDefault();
+        this.getRelativePosition(this.element as HTMLDivElement, event);
+        break;
+      case 'mouseup':
+      case 'touchend':
+        this.dragging = false;
+        break;
+    }
   }
 
 }
