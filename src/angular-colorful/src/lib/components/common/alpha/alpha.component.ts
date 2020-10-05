@@ -3,6 +3,7 @@ import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angula
 
 // Project
 import { HsvaColor } from '../../../interfaces/hsva-color.interface';
+import { Interaction } from '../../../interfaces/interaction.interface';
 import { hsvaToHslaString, hsvaToHslString } from '../../../utils/convert';
 
 
@@ -40,7 +41,7 @@ export class AlphaComponent implements OnInit, DoCheck {
     this.bgColor1 = hsvaToHslaString({ h: color.h, s: color.s, v: color.v, a: 1 });
   }
 
-  move($event): void {
+  move($event: Interaction): void {
     this.color.a = $event.left / 100;
     this.onMove.emit(this.color);
   }

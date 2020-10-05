@@ -2,8 +2,9 @@
 import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 // Project
-import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 import { hsvaToHslString } from '../../../utils/convert';
+import { HsvaColor } from '../../../interfaces/hsva-color.interface';
+import { Interaction } from '../../../interfaces/interaction.interface';
 
 
 
@@ -36,7 +37,7 @@ export class HueComponent implements OnInit, DoCheck {
     this.bgColor = hsvaToHslString({ h: color.h, s: 100, v: 100, a: 1 });
   }
 
-  move($event): void {
+  move($event: Interaction): void {
     this.left = `${$event.left}%`;
     this.color.h = ($event.left * 360) / 100;
     this.onMove.emit(this.color);

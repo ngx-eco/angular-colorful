@@ -3,6 +3,7 @@ import { Component, Input, HostListener, OnInit, Output, EventEmitter, ElementRe
 
 // Project
 import { clamp } from '../../../utils/clamp';
+import { Interaction } from '../../../interfaces/interaction.interface';
 
 
 
@@ -43,9 +44,11 @@ export class InteractiveComponent implements OnInit {
   getRelativePosition = (node: HTMLDivElement, event: MouseEvent | TouchEvent): void => {
     const pointer = this.isTouch(event) ? (event as TouchEvent).touches[0] : (event as MouseEvent);
     const rect = node.getBoundingClientRect();
-    const x = clamp(Math.round((100 * (pointer.clientX - rect.left)) / node.clientWidth), 0, 100);
-    const y = clamp(Math.round((100 * (pointer.clientY - rect.top)) / node.clientHeight), 0, 100);
-    this.onMove.emit({left: x, top: y});
+    const interactive: Interaction = {
+      left:  clamp(Math.round((100 * (pointer.clientX - rect.left)) / node.clientWidth), 0, 100),
+      top: clamp(Math.round((100 * (pointer.clientY - rect.top)) / node.clientHeight), 0, 100),
+    }
+    this.onMove.emit(interactive);
   }
 
 }

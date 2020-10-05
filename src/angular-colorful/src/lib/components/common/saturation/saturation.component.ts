@@ -4,6 +4,7 @@ import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angula
 // Project
 import { hsvaToHslString } from '../../../utils/convert';
 import { HsvaColor } from '../../../interfaces/hsva-color.interface';
+import { Interaction } from '../../../interfaces/interaction.interface';
 
 
 
@@ -39,7 +40,7 @@ export class SaturationComponent implements OnInit, DoCheck {
     this.grColor = hsvaToHslString({ h: color.h, s: 100, v: 100, a: 0 });
   }
 
-  move($event): void {
+  move($event: Interaction): void {
     this.color.s = $event.left;
     this.color.v = (100 - $event.top);
     this.onMove.emit(this.color);

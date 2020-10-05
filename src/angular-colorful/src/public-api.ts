@@ -25,6 +25,7 @@ export * from './lib/interfaces/rgba-color.interface';
 export * from './lib/interfaces/hsla-color.interface';
 export * from './lib/interfaces/hsva-color.interface';
 export * from './lib/interfaces/color-model.interface';
+export * from './lib/interfaces/interaction.interface';
 export * from './lib/interfaces/object-color.interface';
 
 // Utils
