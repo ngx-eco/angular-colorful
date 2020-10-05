@@ -4,10 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 // App
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
-
-// Server
-import { ServiceWorkerModule } from '@angular/service-worker';
 
 // Project
 import { AngularColorfulModule } from 'angular-colorful';
@@ -20,8 +16,7 @@ import { AngularColorfulModule } from 'angular-colorful';
   ],
   imports: [
     AngularColorfulModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
