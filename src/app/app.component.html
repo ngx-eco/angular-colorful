@@ -11,7 +11,7 @@
             <h1 class="header--title">Angular Colorful 🎨</h1>
             <h2 class="header--description">
                 A tiny color picker component for modern Angular apps. Port of
-                <a 
+                <a
                     href="https://github.com/omgovich/react-colorful"
                     target="_blank"
                     rel="noreferrer"
@@ -45,7 +45,7 @@
     </header>
     <div class="preview">
         <div class="preview--title">{{colors.hex.name}}</div>
-        <hex-color-picker 
+        <hex-color-picker
             class="preview--demo"
             color="#406090"
             (onColorChanged)="colorsChanged($event, 'hex')"
@@ -54,7 +54,7 @@
     </div>
     <div class="preview">
         <div class="preview--title">{{colors.rgb.name}}</div>
-        <rgb-color-picker 
+        <rgb-color-picker
             class="preview--demo"
             [color]="{ r: 60, g: 80, b: 120 }"
             (onColorChanged)="colorsChanged($event, 'rgb')"
@@ -72,7 +72,7 @@
     </div>
     <div class="preview">
         <div class="preview--title">{{colors.rgba.name}}</div>
-        <rgba-color-picker 
+        <rgba-color-picker
             class="preview--demo"
             [color]="{ r: 60, g: 80, b: 120, a: 0.5 }"
             (onColorChanged)="colorsChanged($event, 'rgba')"
@@ -90,7 +90,7 @@
     </div>
     <div class="preview">
         <div class="preview--title">{{colors.hsl.name}}</div>
-        <hsl-color-picker 
+        <hsl-color-picker
             class="preview--demo"
             [color]="{ h: 200, s: 25, l: 32 }"
             (onColorChanged)="colorsChanged($event, 'hsl')"
@@ -108,7 +108,7 @@
     </div>
     <div class="preview">
         <div class="preview--title">{{colors.hsla.name}}</div>
-        <hsla-color-picker 
+        <hsla-color-picker
             class="preview--demo"
             [color]="{ h: 200, s: 25, l: 32, a: 0.5 }"
             (onColorChanged)="colorsChanged($event, 'hsla')"
@@ -126,7 +126,7 @@
     </div>
     <div class="preview">
         <div class="preview--title">{{colors.hsv.name}}</div>
-        <hsv-color-picker 
+        <hsv-color-picker
             class="preview--demo"
             [color]="{ h: 200, s: 25, v: 50 }"
             (onColorChanged)="colorsChanged($event, 'hsv')"
@@ -144,7 +144,7 @@
     </div>
     <div class="preview">
         <div class="preview--title">{{colors.hsva.name}}</div>
-        <hsva-color-picker 
+        <hsva-color-picker
             class="preview--demo"
             [color]="{ h: 200, s: 25, v: 50, a: 0.5 }"
             (onColorChanged)="colorsChanged($event, 'hsva')"

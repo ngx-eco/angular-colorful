@@ -1,7 +1,12 @@
+// Angular
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ColorModel } from '../../interfaces/color-model.interface';
+
+// Project
 import { HsvaColor } from '../../interfaces/hsva-color.interface';
+import { ColorModel } from '../../interfaces/color-model.interface';
 import { hsvaStringToHsva, hsvaToHsvaString } from '../../utils/convert';
+
+
 
 @Component({
   selector: 'hsva-string-color-picker',
@@ -25,11 +30,11 @@ export class HsvaStringColorPickerComponent implements OnInit, ColorModel<string
   public defaultColor: string = "hsl(0, 0%, 0%)";
 
   public toHsva = (hsv): HsvaColor => hsvaStringToHsva(hsv);
-  
+
   public fromHsva = (hsva): string => hsvaToHsvaString(hsva);
 
   constructor() { }
-  
+
   ngOnInit(): void { }
 
   @Output() onColorChanged = new EventEmitter<string>();

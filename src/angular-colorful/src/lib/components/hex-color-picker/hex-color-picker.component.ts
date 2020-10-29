@@ -1,7 +1,12 @@
+// Angular
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+// Project
 import { ColorModel } from '../../interfaces/color-model.interface';
 import { HsvaColor } from '../../interfaces/hsva-color.interface';
 import { hexToHsva, hsvaToHex } from '../../utils/convert';
+
+
 
 @Component({
   selector: 'hex-color-picker',
@@ -25,11 +30,11 @@ export class HexColorPickerComponent implements OnInit, ColorModel<string> {
   public defaultColor: string = "000";
 
   public toHsva = (hex): HsvaColor => hexToHsva(hex);
-  
+
   public fromHsva = (hsva): string => hsvaToHex(hsva);
 
   constructor() { }
-  
+
   ngOnInit(): void { }
 
   @Output() onColorChanged = new EventEmitter<string>();

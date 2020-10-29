@@ -1,6 +1,5 @@
 // Angular
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 
 // Project
 import { hsvaToRgbaString, RgbaColor, rgbaToHsva } from 'angular-colorful';
@@ -13,8 +12,6 @@ import { hsvaToRgbaString, RgbaColor, rgbaToHsva } from 'angular-colorful';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-  public readonly env = environment;
 
   public appColor: string;
   public textColor: string;
@@ -62,7 +59,7 @@ export class AppComponent implements OnInit {
     this.textColor = this.getBrightness(color) > 128 || color.a < 0.5 ? "#000" : "#FFF";
     this.appColor = (hsvaToRgbaString(rgbaToHsva({ r: color.r, g: color.g, b: color.b, a: color.a})));
   }
-  
+
   // See http://www.w3.org/TR/AERT#color-contrast
   getBrightness = ({ r, g, b }: RgbaColor) => (r * 299 + g * 587 + b * 114) / 1000;
 

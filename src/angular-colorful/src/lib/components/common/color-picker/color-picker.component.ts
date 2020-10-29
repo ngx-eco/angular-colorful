@@ -1,7 +1,7 @@
 // Angular
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-// Angular
+// Project
 import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 
 
@@ -13,15 +13,17 @@ import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 })
 export class ColorPickerComponent implements OnInit {
 
-  private _color: HsvaColor;
+  // private _color: HsvaColor;
 
-  @Input() public set color(color: HsvaColor) {
-    this._color = color;
-  }
+  // @Input() public set color(color: HsvaColor) {
+  //   this._color = color;
+  // }
 
-  public get color(): HsvaColor {
-    return this._color;
-  }
+  // public get color(): HsvaColor {
+  //   return this._color;
+  // }
+
+  @Input() public color: HsvaColor
 
   constructor() { }
 
