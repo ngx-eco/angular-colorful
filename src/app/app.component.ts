@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   private _color: RgbaColor;
 
   public set color(color: RgbaColor) {
-    this.appColor = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a}`;
+    this.appColor = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
     this._color = color;
   }
 
