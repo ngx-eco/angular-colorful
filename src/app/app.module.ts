@@ -16,7 +16,7 @@ import { AngularColorfulModule } from 'angular-colorful';
   ],
   imports: [
     AngularColorfulModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
   ],
   providers: [],
   bootstrap: [AppComponent]
