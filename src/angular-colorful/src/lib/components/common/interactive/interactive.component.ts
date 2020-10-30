@@ -41,7 +41,7 @@ export class InteractiveComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isTouch = (e: MouseEvent | TouchEvent) => 'touches' in e;
+  isTouch = (event: MouseEvent | TouchEvent) => 'touches' in event;
 
   getRelativePosition = (node: HTMLDivElement, event: MouseEvent | TouchEvent): void => {
     const pointer = this.isTouch(event) ? (event as TouchEvent).touches[0] : (event as MouseEvent);
