@@ -17,8 +17,8 @@
     ],
     "paths": {
       "angular-colorful": [
-        "dist/angular-colorful/angular-colorful",
-        "dist/angular-colorful"
+        "dist/lib/angular-colorful",
+        "dist/lib"
       ]
     }
   }
