@@ -1,6 +1,6 @@
 {
   "name": "angular-colorful",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny color picker component for modern Angular apps",
   "author": "fil0157 <fil0157@ya.ru>",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git+https://github.com/fil0157/angular-colorful.git"
   },
-  "homepage": "https://fil0157.github.io/angular-colorful",
+  "homepage": "https://angular-colorful.fil0157.ru",
   "bugs": {
     "url": "https://github.com/fil0157/angular-colorful/issues"
   },
