@@ -24,7 +24,7 @@
     "ssr:build": "ng build --prod && ng run angular-colorful-app:server:production",
     "prerender": "ng run angular-colorful-app:prerender",
     "lib:start": "ng build angular-colorful --watch",
-    "lib:build": "ng build angular-colorful --prod && node tools/build-lib.js",
+    "lib:build": "ng build angular-colorful && node tools/build-lib.js",
     "lib:test": "ng test angular-colorful",
     "lib:lint": "ng lint angular-colorful",
     "lib:lint:fix": "ng lint angular-colorful --fix",
