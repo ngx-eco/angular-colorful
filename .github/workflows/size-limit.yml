@@ -1,6 +1,12 @@
 name: "size-limit"
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   size-limit:
@@ -11,6 +17,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: andresz1/size-limit-action@v1.0.0
+
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 10.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build library
+        run: npm run lib:build
+
+      - name: Test size
+        run: npm run lib:size
