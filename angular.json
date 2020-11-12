@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "angular-colorful-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "browserTarget": "angular-colorful-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "angular-colorful-app:build"
           }
         },
         "test": {
@@ -119,11 +119,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app:serve"
+            "devServerTarget": "angular-colorful-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app:serve:production"
+              "devServerTarget": "angular-colorful-app:serve:production"
             }
           }
         },
@@ -151,21 +151,21 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "app:build",
-            "serverTarget": "app:server"
+            "browserTarget": "angular-colorful-app:build",
+            "serverTarget": "angular-colorful-app:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production",
-              "serverTarget": "app:server:production"
+              "browserTarget": "angular-colorful-app:build:production",
+              "serverTarget": "angular-colorful-app:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "app:build:production",
-            "serverTarget": "app:server:production",
+            "browserTarget": "angular-colorful-app:build:production",
+            "serverTarget": "angular-colorful-app:server:production",
             "routes": [
               "/"
             ]
