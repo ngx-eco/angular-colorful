@@ -26,7 +26,7 @@
     "lib:start": "ng build angular-colorful --watch",
     "lib:build": "ng build angular-colorful && node tools/build-lib.js",
     "lib:test": "ng test angular-colorful",
-    "lib:size": "npm run lib:build && size-limit",
+    "lib:size": "size-limit",
     "lib:lint": "ng lint angular-colorful",
     "lib:lint:fix": "ng lint angular-colorful --fix",
     "lib:publish": "npm run lib:build && cd dist/lib && npm pack && npm publish",
