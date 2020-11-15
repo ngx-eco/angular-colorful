@@ -1,7 +1,7 @@
 .demo {
     position: relative;
-    width: 200px;
     flex-shrink: 0;
+    width: 200px;
 }
 
 .color--picker {
@@ -15,32 +15,32 @@
     top: calc(100% + 16px);
     left: calc(50% - 45px);
     width: 90px;
-    font-family: "PT Mono", monospace;
-    
-    &:before {
-        content: "#";
+    font-family: 'PT Mono', monospace;
+
+    &::before {
         position: absolute;
         top: 0;
         left: 0;
-        pointer-events: none;
         opacity: 0.33;
+        pointer-events: none;
+        content: '#';
     }
 }
 
-.hexInput {
+.hex-input {
     display: block;
-    color: inherit;
     width: 100%;
     padding-left: 0.7em;
+    color: inherit;
+    text-transform: uppercase;
     background: none;
     outline: none;
-    text-transform: uppercase;
-    opacity: 0.5;
     transition: opacity 0.2s;
+    opacity: 0.5;
 }
 
-.hexInput:focus,
-.hexInput:hover {
+.hex-input:focus,
+.hex-input:hover {
     opacity: 1;
 }
 
@@ -49,11 +49,11 @@
     align-items: center;
     width: 100%;
     max-width: 720px;
-    margin: 0 auto;
     min-height: 100vh;
+    margin: 0 auto;
     padding: 120px 32px;
+    color: #ffffff;
     transition: color 0.15s;
-    color: #fff;
 
     &--content {
         flex-grow: 1;
@@ -92,11 +92,11 @@
     align-items: center;
     height: 44px;
     margin-right: 16px;
+    padding: 0 16px;
     color: inherit;
     text-decoration: none;
     border: 2px solid currentColor;
     border-radius: 6px;
-    padding: 0 16px;
     opacity: 0.8;
 
     &:last-child {
@@ -123,14 +123,14 @@
     display: flex;
     align-items: center;
     padding: 60px;
-    background-color: #fff;
-    border-top: 1px solid #aaa;
+    background-color: #ffffff;
+    border-top: 1px solid #aaaaaa;
 
     &--title {
         flex-shrink: 0;
         width: 7em;
-        text-align: right;
         padding-right: 20px;
+        text-align: right;
     }
 
     &--demo {
@@ -138,24 +138,24 @@
     }
 
     &--output {
-        font-family: "PT Mono", monospace;
         margin-left: 20px;
-        background-color: #eee;
         padding: 4px 8px;
+        font-family: 'PT Mono', monospace;
+        background-color: #eeeeee;
         border-radius: 4px;
     }
 }
 
 @media (max-width: 767px) {
     .header {
+        flex-direction: column;
         max-width: 360px;
         padding: 40px 20px;
-        flex-direction: column;
 
         &--content {
-            text-align: center;
             margin-top: 40px;
             margin-left: 0;
+            text-align: center;
         }
 
         &--title {
@@ -163,8 +163,8 @@
         }
 
         &--description {
-            margin-left: auto;
             margin-right: auto;
+            margin-left: auto;
         }
     }
 
@@ -179,16 +179,16 @@
     .preview {
         flex-direction: column;
         align-items: center;
-    
+
         &--title {
-            text-align: center;
             padding-right: 0;
             padding-bottom: 10px;
+            text-align: center;
         }
-    
+
         &--output {
-            margin-left: 0;
             margin-top: 15px;
+            margin-left: 0;
         }
     }
 }
