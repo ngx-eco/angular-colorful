@@ -1,9 +1,6 @@
 name: "style-lint"
 
 on:
-  commit:
-    branches:
-      - master
   push:
     branches:
       - master
