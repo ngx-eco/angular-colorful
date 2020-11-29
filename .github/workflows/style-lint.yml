@@ -26,5 +26,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Test stele lint
+      - name: Stylelint
         run: npm run style
