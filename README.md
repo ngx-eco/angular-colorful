@@ -287,12 +287,7 @@ It would be an easier task to list all of the browsers and versions that **react
 
 ## Ports
 
-Not using Angular? Not a problem! The angular-colorful is ported from the react-colorful. Here I will attach all ported projects. Check out the list of ports adapted to your favourite framework or technology of choice:
-
-- **[react-colorful](https://github.com/omgovich/react-colorful)** — a original project written for React, generously ported by [@omgovich](https://github.com/omgovich).
-- **[vanilla-colorful](https://github.com/web-padawan/vanilla-colorful)** — a react-colorful reimplementation in vanilla Custom Elements, generously ported by [@web-padavan](https://github.com/web-padawan).
-
-If your port is not in the list, reach us out via [GitHub issues](https://github.com/omgovich/react-colorful/issues).
+Not using Angular? No problem! Angular-colorful ported from react-colorful. All the ported projects can be viewed [here](https://github.com/omgovich/react-colorful#ports).
 
 ## Roadmap
 
