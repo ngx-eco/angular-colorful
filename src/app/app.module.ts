@@ -17,8 +17,8 @@ import { environment } from '../environments/environment';
     AppComponent
   ],
   imports: [
+    BrowserModule,
     AngularColorfulModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
