@@ -137,7 +137,7 @@
       }
     ],
     "comment-whitespace-inside": "always",
-    "indentation": 4,
+    "indentation": 2,
     "max-empty-lines": 2,
     "no-eol-whitespace": true,
     "no-missing-end-of-source-newline": true
