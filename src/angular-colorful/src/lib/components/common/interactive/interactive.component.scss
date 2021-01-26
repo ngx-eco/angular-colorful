@@ -1,76 +1,76 @@
 :host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  touch-action: none;
+}
+
+.pointer {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+
+  &::after {
+    background-color: currentColor;
+  }
+
+  &::after {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     border-radius: inherit;
-    touch-action: none;
-}
-
-.pointer {
-    position: absolute;
-    z-index: 1;
-    box-sizing: border-box;
-    width: 28px;
-    height: 28px;
-    background-color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transform: translate(-50%, -50%);
-
-    &::after {
-        background-color: currentColor;
-    }
-
-    &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        border-radius: inherit;
-        pointer-events: none;
-        content: '';
-    }
+    pointer-events: none;
+    content: '';
+  }
 }
 
 /* Display the saturation pointer over the hue one */
 
 :host-context(.saturation) .pointer {
-    z-index: 3;
+  z-index: 3;
 }
 
 /* Display the hue pointer over the alpha one */
 
 :host-context(.hue) .pointer {
-    z-index: 2;
+  z-index: 2;
 }
 
 :host-context(.alpha) .pointer {
 
-    @extend .alpha-pattern;
+  @extend .alpha-pattern;
 }
 
 :host-context(.interactive:focus) .pointer {
-    transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .interactive {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: inherit;
-    outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  outline: none;
 
-    /* Don't trigger the default scrolling behavior when the event is originating from this element */
-    touch-action: none;
+  /* Don't trigger the default scrolling behavior when the event is originating from this element */
+  touch-action: none;
 }
 
 .alpha-pattern {
-    background-color: #ffffff;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill-opacity=".05"><rect x="8" width="8" height="8"/><rect y="8" width="8" height="8"/></svg>');
+  background-color: #ffffff;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill-opacity=".05"><rect x="8" width="8" height="8"/><rect y="8" width="8" height="8"/></svg>');
 }

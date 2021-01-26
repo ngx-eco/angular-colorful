@@ -1,21 +1,21 @@
 .hue {
-    position: relative;
-    height: 24px;
+  position: relative;
+  height: 24px;
 }
 
 .hue {
-    background: linear-gradient(
-        to right,
-        #ff0000 0%,
-        #ffff00 17%,
-        #00ff00 33%,
-        #00ffff 50%,
-        #0000ff 67%,
-        #ff00ff 83%,
-        #ff0000 100%
-    );
+  background: linear-gradient(
+    to right,
+    #ff0000 0%,
+    #ffff00 17%,
+    #00ff00 33%,
+    #00ffff 50%,
+    #0000ff 67%,
+    #ff00ff 83%,
+    #ff0000 100%
+  );
 }
 
 :host-context(color-picker) .hue {
-    border-radius: 0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
 }
