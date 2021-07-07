@@ -12,6 +12,13 @@
   "bugs": {
     "url": "https://github.com/fil0157/angular-colorful/issues"
   },
+  "peerDependencies": {
+    "@angular/common": "^12.1.1",
+    "@angular/core": "^12.1.1"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "keywords": [
     "angular",
     "color",

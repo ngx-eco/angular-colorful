@@ -1,13 +1,13 @@
 # Changelog
 
 ## 2.0.0 (January 28, 2021)
-- Angular updated
+- Angular updated (v11.1.0)
 
 ## 1.0.2 (October 30, 2020)
 - Fix package
 
 ## 1.0.1 (October 30, 2020)
-- Angular updated to 10.2.0
+- Angular updated (v10.2.0)
 - Refactoring
 - Fix
 

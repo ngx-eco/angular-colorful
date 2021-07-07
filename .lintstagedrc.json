@@ -1,8 +1,0 @@
-{
-  "**/*.+(ts)": [
-    "size-limit"
-  ],
-  "**/*.+(scss|sass|css)": [
-    "npm run style"
-  ]
-}
