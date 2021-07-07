@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.0 (July 7, 2021)
+- Angular updated (v12.1.1)
+
 ## 2.0.0 (January 28, 2021)
 - Angular updated (v11.1.0)
 
