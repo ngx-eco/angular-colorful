@@ -6,11 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fil0157/angular-colorful.git"
+    "url": "git+https://github.com/ngx-eco/angular-colorful.git"
   },
-  "homepage": "https://angular-colorful.fil0157.ru",
+  "homepage": "https://angular-colorful.ru",
   "bugs": {
-    "url": "https://github.com/fil0157/angular-colorful/issues"
+    "url": "https://github.com/ngx-eco/angular-colorful/issues"
   },
   "scripts": {
     "start": "ng serve",
