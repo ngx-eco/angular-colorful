@@ -13,11 +13,11 @@
     "url": "https://github.com/fil0157/angular-colorful/issues"
   },
   "peerDependencies": {
-    "@angular/common": ">=13.0.0 <14.0.0",
-    "@angular/core": ">=13.0.0 <14.0.0"
+    "@angular/common": ">=14.0.0 <15.0.0",
+    "@angular/core": ">=14.0.0 <15.0.0"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.4.0"
   },
   "keywords": [
     "angular",
