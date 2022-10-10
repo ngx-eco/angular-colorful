@@ -33,12 +33,16 @@
 - [Quickstart](#Quickstart)
 - [Usage](#Usage)
 - [Supported color models](#Supported-color-models)
+
 <!-- - [Overriding styles](#Overriding-styles) -->
 <!-- - [How to paste or type a color?](#How-to-paste-or-type-a-color?) -->
+
 - [TypeScript support](#TypeScript-support)
+
 <!-- - [Why angular-colorful?](#Why-angular-colorful?) -->
 <!-- - [Projects using angular-colorful](#Projects-using-angular-colorful) -->
 <!-- - [Browser support](#Browser-support) -->
+
 - [Ports](#Ports)
 - [Roadmap](#Roadmap)
 - [Changelog](#Changelog)
@@ -49,16 +53,21 @@
 
 - **Small**: Just 2,6 KB (minified and gzipped). [Size Limit](https://github.com/ai/size-limit) controls the size.
 - **Tree-shakeable**: Only the parts you use will be imported into your app's bundle.
+
 <!-- - **Fast**: Built with hooks and functional components only. -->
 <!-- - **Bulletproof**: Written in strict TypeScript and covered by 40+ tests. -->
+
 - **Simple**: The interface is straight forward and easy to use.
 - **Mobile-friendly**: Works well on mobile devices and touch screens.
+
 <!-- - **Accessible**: Follows the [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) guidelines to support users of assistive technologies. -->
+
 - **No dependencies**
 
 ## Demo
 
-- [Website](https://fil0157.github.io/angular-colorful)
+- [Website](https://angular-colorful.ru/)
+
 <!-- - [HEX Color Picker (CodeSandbox)](https://codesandbox.io/s/react-colorful-demo-u5vwp)
 - [RGBA Color Picker (CodeSandbox)](https://codesandbox.io/s/react-colorful-rgb-o9q0t) -->
 
@@ -87,11 +96,11 @@ git clone https://github.com/fil0157/angular-colorful.git
 ### app.module.ts
 
 ```ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppComponent} from './app.component';
 
-import { AngularColorfulModule } from 'angular-colorful';
+import {AngularColorfulModule} from 'angular-colorful';
 
 @NgModule({
   declarations: [
@@ -104,15 +113,16 @@ import { AngularColorfulModule } from 'angular-colorful';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 ```
 
 ### app.component.ts
 
 ```ts
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { RgbaColor } from 'angular-colorful';
+import {RgbaColor} from 'angular-colorful';
 
 @Component({
   selector: 'app-root',
@@ -121,18 +131,19 @@ import { RgbaColor } from 'angular-colorful';
 })
 export class AppComponent {
 
-  color: RgbaColor = { r: 255, g: 255, b: 255 };
+  color: RgbaColor = {r: 255, g: 255, b: 255};
 
   colorChanged(color): void {
     this.color = color;
   }
- 
+
 }
 ```
 
 ### app.component.html
 
 ```html
+
 <rgba-color-picker
   [color]="color"
   (onColorChanged)="colorChanged($event)">
@@ -141,7 +152,8 @@ export class AppComponent {
 
 ## Supported color models
 
-We provide 13 additional color picker components for different color models, unless your app needs a HEX string as an input/output format.
+We provide 13 additional color picker components for different color models, unless your app needs a HEX string as an
+input/output format.
 
 <details>
   <summary>How to use another color model</summary>
@@ -149,7 +161,7 @@ We provide 13 additional color picker components for different color models, unl
 #### Available pickers
 
 | Import                      | Value example                      |
-| --------------------------- | ---------------------------------- |
+|-----------------------------|------------------------------------|
 | `{ HexColorPicker }`        | `"#ffffff"`                        |
 | `{ RgbColorPicker }`        | `{ r: 255, g: 255, b: 255 }`       |
 | `{ RgbaColorPicker }`       | `{ r: 255, g: 255, b: 255, a: 1 }` |
@@ -230,15 +242,18 @@ const YourComponent = () => {
 <details>
   <summary>How you can get the most from our TypeScript support</summary><br />
 
-While not only typing its own functions and variables, it can also help you type yours. Depending on the component you are using, you can also import the type that is associated with the component. For example, if you are using our HSL color picker component, you can also import the `HSL` type.
+While not only typing its own functions and variables, it can also help you type yours. Depending on the component you
+are using, you can also import the type that is associated with the component. For example, if you are using our HSL
+color picker component, you can also import the `HSL` type.
 
 ```ts
-import { HslColorPicker, HslColor } from "angular-colorful";
+import {HslColorPicker, HslColor} from "angular-colorful";
 
-const myHslValue: HslColor = { h: 0, s: 0, l: 0 };
+const myHslValue: HslColor = {h: 0, s: 0, l: 0};
 ```
 
-Take a look at [Supported Color Models](#supported-color-models) for more information about the types and color formats you may want to use.
+Take a look at [Supported Color Models](#supported-color-models) for more information about the types and color formats
+you may want to use.
 
 </details>
 
@@ -287,7 +302,8 @@ It would be an easier task to list all of the browsers and versions that **react
 
 ## Ports
 
-Not using Angular? No problem! Angular-colorful ported from react-colorful. All the ported projects can be viewed [here](https://github.com/omgovich/react-colorful#ports).
+Not using Angular? No problem! Angular-colorful ported from react-colorful. All the ported projects can be
+viewed [here](https://github.com/omgovich/react-colorful#ports).
 
 ## Roadmap
 
@@ -300,7 +316,8 @@ Not using Angular? No problem! Angular-colorful ported from react-colorful. All 
 
 ## Changelog
 
-For changelogs, check out [the Releases section of angular-colorful](https://github.com/fil0157/angular-colorful/releases)
+For changelogs, check
+out [the Releases section of angular-colorful](https://github.com/fil0157/angular-colorful/releases)
 or the [CHANGELOG.md](CHANGELOG.md).
 
 ## Copyright
