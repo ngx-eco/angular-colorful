@@ -28,6 +28,7 @@
     "lib:lint": "ng lint angular-colorful",
     "lib:lint:fix": "ng lint angular-colorful --fix",
     "lib:publish": "npm run lib:build && cd dist/lib && npm pack && npm publish",
+    "update-deps": "ng update @angular/cli @angular/core",
     "ngcc": "ngcc"
   },
   "devDependencies": {
