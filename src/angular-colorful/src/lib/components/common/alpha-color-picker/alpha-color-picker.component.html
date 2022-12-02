@@ -1,3 +1,7 @@
-<saturation [color]="color" (onMove)="colorChanged($event)"></saturation>
-<hue [color]="color" (onMove)="colorChanged(color)"></hue>
-<alpha [color]="color" (onMove)="colorChanged(color)"></alpha>
+<div class="color-picker">
+  <div class="color-picker__saturation">
+    <saturation [color]="color" (move)="colorChanged($event)"></saturation>
+  </div>
+  <hue [color]="color" (move)="colorChanged(color)"></hue>
+  <alpha [color]="color" (move)="colorChanged(color)"></alpha>
+</div>

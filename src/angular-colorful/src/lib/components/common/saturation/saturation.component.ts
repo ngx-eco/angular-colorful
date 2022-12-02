@@ -3,6 +3,7 @@ import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angula
 
 // Project
 import { hsvaToHslString } from '../../../utils/convert';
+import { defaultHsvaColor } from '../../../utils/constants';
 import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 import { Interaction } from '../../../interfaces/interaction.interface';
 
@@ -15,16 +16,16 @@ import { Interaction } from '../../../interfaces/interaction.interface';
 })
 export class SaturationComponent implements OnInit, DoCheck {
 
-  @Input() public color: HsvaColor;
+  @Input() public color: HsvaColor = defaultHsvaColor;
 
-  public top: string = '';
-  public left: string = '';
-  public bgColor: string = '';
-  public grColor: string = '';
+  public top = '';
+  public left = '';
+  public bgColor = '';
+  public grColor = '';
 
   constructor() { }
 
-  @Output() onMove = new EventEmitter();
+  @Output() move = new EventEmitter();
 
   ngOnInit(): void {
   }
@@ -33,17 +34,17 @@ export class SaturationComponent implements OnInit, DoCheck {
     this.f(this.color);
   }
 
-  f(color): void {
+  f(color: HsvaColor): void {
     this.top = `${100 - color.v}%`;
     this.left = `${color.s}%`;
     this.bgColor = hsvaToHslString(this.color);
     this.grColor = hsvaToHslString({ h: color.h, s: 100, v: 100, a: 0 });
   }
 
-  move($event: Interaction): void {
+  onMove($event: Interaction): void {
     this.color.s = $event.left;
     this.color.v = (100 - $event.top);
-    this.onMove.emit(this.color);
+    this.move.emit(this.color);
   }
 
 }

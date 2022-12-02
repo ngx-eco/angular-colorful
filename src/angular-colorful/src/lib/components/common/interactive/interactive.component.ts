@@ -1,22 +1,21 @@
 // Angular
-import { Component, Input, HostListener, OnInit, Output, EventEmitter, ElementRef } from '@angular/core';
+import {Component, Input, HostListener, OnInit, Output, EventEmitter, ElementRef} from '@angular/core';
 
 // Project
-import { clamp } from '../../../utils/clamp';
-import { Interaction } from '../../../interfaces/interaction.interface';
-
+import {clamp} from '../../../utils/clamp';
+import {Interaction} from '../../../interfaces/interaction.interface';
 
 
 @Component({
   selector: 'interactive',
   templateUrl: './interactive.component.html',
-  styleUrls: ['./interactive.component.scss']
+  styleUrls: ['./interactive.component.scss'],
 })
 export class InteractiveComponent implements OnInit {
 
-  @Input() public top: string;
-  @Input() public left: string;
-  @Input() public color: string;
+  @Input() public top = '';
+  @Input() public left = '';
+  @Input() public color = '';
 
   element: HTMLElement;
 
@@ -28,14 +27,14 @@ export class InteractiveComponent implements OnInit {
     this.element = this.el.nativeElement;
   }
 
-  @Output() onMove = new EventEmitter();
+  @Output() move = new EventEmitter();
 
-  @HostListener('mousedown', ['$event']) onMouseDown($event) {
-    this.handleEvent($event)
+  @HostListener('mousedown', ['$event']) onMouseDown($event: any): void {
+    this.handleEvent($event);
   }
 
-  @HostListener('touchstart', ['$event']) onTouchStart($event) {
-    this.handleEvent($event)
+  @HostListener('touchstart', ['$event']) onTouchStart($event: any): void {
+    this.handleEvent($event);
   }
 
   ngOnInit(): void {
@@ -47,21 +46,25 @@ export class InteractiveComponent implements OnInit {
     const pointer = this.isTouch(event) ? (event as TouchEvent).touches[0] : (event as MouseEvent);
     const rect = node.getBoundingClientRect();
     const interactive: Interaction = {
-      left:  clamp(Math.round((100 * (pointer.clientX - rect.left)) / node.clientWidth), 0, 100),
+      left: clamp(Math.round((100 * (pointer.clientX - rect.left)) / node.clientWidth), 0, 100),
       top: clamp(Math.round((100 * (pointer.clientY - rect.top)) / node.clientHeight), 0, 100),
-    }
-    this.onMove.emit(interactive);
+    };
+    this.move.emit(interactive);
   }
 
-  limit = (number: number) => (number > 1 ? 1 : number < 0 ? 0 : number);
+  limit = (num: number) => (num > 1 ? 1 : num < 0 ? 0 : num);
 
   // Prevent mobile browsers from handling mouse events (conflicting with touch ones).
   // If we detected a touch interaction before, we prefer reacting to touch events only.
   isValid = (event: MouseEvent | TouchEvent): boolean => {
-    if (this.hasTouched && !this.isTouch(event)) return false;
-    if (!this.hasTouched) this.hasTouched = this.isTouch(event);
+    if (this.hasTouched && !this.isTouch(event)) {
+      return false;
+    }
+    if (!this.hasTouched) {
+      this.hasTouched = this.isTouch(event);
+    }
     return true;
-  };
+  }
 
   set dragging(state: boolean) {
     const toggleEvent = state ? document.addEventListener : document.removeEventListener;
@@ -75,14 +78,16 @@ export class InteractiveComponent implements OnInit {
       case 'touchstart':
         event.preventDefault();
         // event.button is 0 in mousedown for left button activation
-        if (!this.isValid(event) || (!this.hasTouched && (event as MouseEvent).button != 0)) return;
-        this.getRelativePosition(this.element as HTMLDivElement, event);
+        if (!this.isValid(event) || (!this.hasTouched && (event as MouseEvent).button !== 0)) {
+          return;
+        }
+        this.getRelativePosition(this.element.firstChild as HTMLDivElement, event);
         this.dragging = true;
         break;
       case 'mousemove':
       case 'touchmove':
         event.preventDefault();
-        this.getRelativePosition(this.element as HTMLDivElement, event);
+        this.getRelativePosition(this.element.firstChild as HTMLDivElement, event);
         break;
       case 'mouseup':
       case 'touchend':

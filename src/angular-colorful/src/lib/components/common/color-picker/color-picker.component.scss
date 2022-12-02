@@ -1,4 +1,4 @@
-:host {
+.color-picker {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,4 +7,8 @@
   cursor: default;
   -webkit-user-select: none;
   user-select: none;
+
+  &__saturation {
+    flex-grow: 1;
+  }
 }

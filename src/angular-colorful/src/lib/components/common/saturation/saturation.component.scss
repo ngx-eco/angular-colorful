@@ -1,9 +1,6 @@
-:host {
-  display: flex;
-  flex-grow: 1;
-}
-
 .saturation {
+  width: 100%;
+  height: 100%;
   position: relative;
   flex-grow: 1;
   background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0)),

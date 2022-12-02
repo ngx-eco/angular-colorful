@@ -2,8 +2,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 // Project
-import { ColorModel } from '../../interfaces/color-model.interface';
+import { defaultHsvaColor } from '../../utils/constants';
 import { HsvaColor } from '../../interfaces/hsva-color.interface';
+import { ColorModel } from '../../interfaces/color-model.interface';
 
 
 
@@ -14,8 +15,8 @@ import { HsvaColor } from '../../interfaces/hsva-color.interface';
 })
 export class HsvaColorPickerComponent implements OnInit, ColorModel<HsvaColor> {
 
-  public hsvaColor: HsvaColor;
-  private _color: HsvaColor;
+  public hsvaColor: HsvaColor = defaultHsvaColor;
+  private _color: HsvaColor = defaultHsvaColor;
 
   @Input() public set color(color: HsvaColor) {
     this._color = color || this.defaultColor;
@@ -28,18 +29,18 @@ export class HsvaColorPickerComponent implements OnInit, ColorModel<HsvaColor> {
 
   public defaultColor: HsvaColor = { h: 0, s: 0, v: 0, a: 1 };
 
-  public toHsva = ({ h, s, v, a }): HsvaColor => ({ h, s, v, a });
-  
-  public fromHsva = (hsva): HsvaColor => hsva;
+  public toHsva = (hsva: HsvaColor): HsvaColor => (hsva);
+
+  public fromHsva = (hsva: HsvaColor): HsvaColor => hsva;
 
   constructor() { }
-  
+
   ngOnInit(): void { }
 
-  @Output() onColorChanged = new EventEmitter<HsvaColor>();
+  @Output() colorChanged = new EventEmitter<HsvaColor>();
 
-  colorChanged(color: HsvaColor): void {
-    this.onColorChanged.emit(this.fromHsva(color));
+  onColorChanged(color: HsvaColor): void {
+    this.colorChanged.emit(this.fromHsva(color));
   }
 
 }

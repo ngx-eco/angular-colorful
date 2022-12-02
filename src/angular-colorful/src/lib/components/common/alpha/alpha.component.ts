@@ -3,6 +3,7 @@ import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angula
 
 // Project
 import { hsvaToHslaString } from '../../../utils/convert';
+import { defaultHsvaColor } from '../../../utils/constants';
 import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 import { Interaction } from '../../../interfaces/interaction.interface';
 
@@ -15,35 +16,35 @@ import { Interaction } from '../../../interfaces/interaction.interface';
 })
 export class AlphaComponent implements OnInit, DoCheck {
 
-  @Input() public color: HsvaColor;
+  @Input() public color: HsvaColor = defaultHsvaColor;
 
-  public left: string = '';
-  public top: string = '50%';
-  public bgColor: string = '';
-  public bgColor0: string = '';
-  public bgColor1: string = '';
+  public left = '';
+  public top = '50%';
+  public bgColor = '';
+  public bgColor0 = '';
+  public bgColor1 = '';
 
   constructor() { }
 
-  @Output() onMove = new EventEmitter();
+  @Output() move = new EventEmitter();
 
   ngOnInit(): void {
   }
 
-  ngDoCheck() {
+  ngDoCheck(): void {
     this.f(this.color);
   }
 
-  f(color): void {
+  f(color: HsvaColor): void {
     this.left = `${color.a * 100}%`;
     this.bgColor = hsvaToHslaString(this.color);
     this.bgColor0 = hsvaToHslaString({ h: color.h, s: color.s, v: color.v, a: 0 });
     this.bgColor1 = hsvaToHslaString({ h: color.h, s: color.s, v: color.v, a: 1 });
   }
 
-  move($event: Interaction): void {
+  onMove($event: Interaction): void {
     this.color.a = $event.left / 100;
-    this.onMove.emit(this.color);
+    this.move.emit(this.color);
   }
 
 }

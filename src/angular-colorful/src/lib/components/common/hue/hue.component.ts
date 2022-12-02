@@ -3,6 +3,7 @@ import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angula
 
 // Project
 import { hsvaToHslString } from '../../../utils/convert';
+import { defaultHsvaColor } from '../../../utils/constants';
 import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 import { Interaction } from '../../../interfaces/interaction.interface';
 
@@ -15,15 +16,15 @@ import { Interaction } from '../../../interfaces/interaction.interface';
 })
 export class HueComponent implements OnInit, DoCheck {
 
-  @Input() public color: HsvaColor;
+  @Input() public color: HsvaColor = defaultHsvaColor;
 
-  public top: string = '50%';
-  public left: string = '';
-  public bgColor: string = '';
+  public top = '50%';
+  public left = '';
+  public bgColor = '';
 
   constructor() { }
 
-  @Output() onMove = new EventEmitter();
+  @Output() move = new EventEmitter();
 
   ngOnInit(): void {
   }
@@ -32,15 +33,15 @@ export class HueComponent implements OnInit, DoCheck {
     this.f(this.color);
   }
 
-  f(color): void {
+  f(color: HsvaColor): void {
     this.left = `${(color.h * 100) / 360}%`;
     this.bgColor = hsvaToHslString({ h: color.h, s: 100, v: 100, a: 1 });
   }
 
-  move($event: Interaction): void {
+  onMove($event: Interaction): void {
     this.left = `${$event.left}%`;
     this.color.h = ($event.left * 360) / 100;
-    this.onMove.emit(this.color);
+    this.move.emit(this.color);
   }
 
 }

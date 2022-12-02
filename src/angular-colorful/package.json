@@ -27,11 +27,10 @@
     "colorpicker"
   ],
   "main": "bundles/angular-colorful.umd.js",
-  "module": "fesm2015/angular-colorful.js",
-  "es2015": "fesm2015/angular-colorful.js",
-  "esm2015": "esm2015/angular-colorful.js",
-  "fesm2015": "fesm2015/angular-colorful.js",
+  "module": "fesm2020/angular-colorful.js",
+  "es2015": "fesm2020/angular-colorful.js",
+  "esm2020": "esm2020/angular-colorful.js",
+  "fesm2020": "fesm2020/angular-colorful.js",
   "typings": "angular-colorful.d.ts",
-  "metadata": "angular-colorful.metadata.json",
-  "sideEffects": false
+  "metadata": "angular-colorful.metadata.json"
 }

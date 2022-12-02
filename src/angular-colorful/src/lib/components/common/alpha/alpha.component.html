@@ -2,6 +2,6 @@
 
     <div class="alpha-gradient" [style.background-image]="'linear-gradient(90deg, ' + bgColor0 + ', ' + bgColor1 + ')'"></div>
 
-    <interactive [top]="top" [left]="left" [color]="bgColor" (onMove)="move($event)"></interactive>
+    <interactive [top]="top" [left]="left" [color]="bgColor" (move)="onMove($event)"></interactive>
 
 </div>

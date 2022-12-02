@@ -146,7 +146,7 @@ export class AppComponent {
 
 <rgba-color-picker
   [color]="color"
-  (onColorChanged)="colorChanged($event)">
+  (colorChanged)="colorChanged($event)">
 </rgba-color-picker>
 ```
 

@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Project
-import { hsvaToRgbaString, RgbaColor, rgbaToHsva } from 'angular-colorful';
+import { AnyColor, hsvaToRgbaString, RgbaColor, rgbaToHsva } from 'angular-colorful';
 
 
 
@@ -13,9 +13,9 @@ import { hsvaToRgbaString, RgbaColor, rgbaToHsva } from 'angular-colorful';
 })
 export class AppComponent implements OnInit {
 
-  public appColor: string;
-  public textColor: string;
-  private _color: RgbaColor;
+  public appColor = '';
+  public textColor = '';
+  private _color: RgbaColor = {r: 0, g: 0, b: 0, a: 0};
 
   public set color(color: RgbaColor) {
     this.appColor = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     return this._color;
   }
 
-  public colors = {
+  public colors: { [key: string]: {name: string, value: AnyColor} } = {
     hex: {name: 'HEX', value: '#406090'},
     rgb: {name: 'RGB', value: { r: 60, g: 80, b: 120 }},
     hsl: {name: 'HSL', value: { h: 200, s: 25, l: 32 }},
@@ -40,23 +40,26 @@ export class AppComponent implements OnInit {
     rgbaString: {name: 'RGBA String', value: 'rgba(60, 80, 120, 0.5)'},
     hslaString: {name: 'HSLA String', value: 'hsla(200, 25, 32, 0.5)'},
     hsvaString: {name: 'HSVA String', value: 'hsva(200, 25, 50, 0.5)'},
-  }
+  };
 
   ngOnInit(): void {
     this.color = this.getRandomColor();
   }
 
-  public getName(type) {
-    if (typeof this.colors[type].value === 'string') return this.colors[type].value
-    else return JSON.stringify(this.colors[type].value)
+  public getName(type: string): AnyColor {
+    if (typeof this.colors[type].value === 'string') {
+      return this.colors[type].value;
+    } else {
+      return JSON.stringify(this.colors[type].value);
+    }
   }
 
-  colorsChanged(color, type): void {
+  colorsChanged(color: AnyColor, type: string): void {
     this.colors[type].value = color;
   }
 
-  colorChanged(color): void {
-    this.textColor = this.getBrightness(color) > 128 || color.a < 0.5 ? "#000" : "#FFF";
+  colorChanged(color: RgbaColor): void {
+    this.textColor = this.getBrightness(color) > 128 || color.a < 0.5 ? '#000' : '#FFF';
     this.appColor = (hsvaToRgbaString(rgbaToHsva({ r: color.r, g: color.g, b: color.b, a: color.a})));
   }
 

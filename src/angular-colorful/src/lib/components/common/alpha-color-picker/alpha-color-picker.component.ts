@@ -2,6 +2,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 // Project
+import { defaultHsvaColor } from '../../../utils/constants';
 import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 
 
@@ -13,7 +14,7 @@ import { HsvaColor } from '../../../interfaces/hsva-color.interface';
 })
 export class AlphaColorPickerComponent implements OnInit {
 
-  private _color: HsvaColor;
+  private _color: HsvaColor = defaultHsvaColor;
 
   @Input() public set color(color: HsvaColor) {
     this._color = color;
@@ -25,12 +26,12 @@ export class AlphaColorPickerComponent implements OnInit {
 
   constructor() { }
 
-  @Output() onColorChanged = new EventEmitter<string>();
+  @Output() onColorChanged = new EventEmitter<HsvaColor>();
 
   ngOnInit(): void {
   }
 
-  colorChanged(color): void {
+  colorChanged(color: HsvaColor): void {
     this.color = color;
     this.onColorChanged.emit(color);
   }
