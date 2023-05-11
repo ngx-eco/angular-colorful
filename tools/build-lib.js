@@ -9,7 +9,6 @@ const LIB_DIR = `dist/lib`;
 
 
 const FILES = [
-    `src/angular-colorful/package.json`,
     `CHANGELOG.md`,
     `LICENSE.md`,
     `README.md`
