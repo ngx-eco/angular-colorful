@@ -1,7 +1,14 @@
 <div class="alpha alpha-pattern last-control">
 
-    <div class="alpha-gradient" [style.background-image]="'linear-gradient(90deg, ' + bgColor0 + ', ' + bgColor1 + ')'"></div>
+    <div
+      class="alpha-gradient"
+      [style.background-image]="'linear-gradient(90deg, ' + bgColorFrom + ', ' + bgColorTo + ')'">
+    </div>
 
-    <interactive [top]="top" [left]="left" [color]="bgColor" (move)="onMove($event)"></interactive>
+    <interactive
+      [left]="left"
+      [color]="bgColor"
+      (move)="onMove($event)">
+    </interactive>
 
 </div>

@@ -1,8 +1,6 @@
-// Project
-import { HsvColor } from './hsv-color.interface';
-
+import {HsvColor} from './hsv-color.interface';
 
 
 export interface HsvaColor extends HsvColor {
-    a: number;
+  a: number;
 }

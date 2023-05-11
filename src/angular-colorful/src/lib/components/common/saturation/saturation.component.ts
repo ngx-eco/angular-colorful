@@ -1,33 +1,29 @@
-// Angular
-import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-// Project
-import { hsvaToHslString } from '../../../utils/convert';
-import { defaultHsvaColor } from '../../../utils/constants';
-import { HsvaColor } from '../../../interfaces/hsva-color.interface';
-import { Interaction } from '../../../interfaces/interaction.interface';
-
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, Output} from '@angular/core';
+import {hsvaToHslString} from '../../../utils/convert';
+import {defaultHsvaColor} from '../../../utils/constants';
+import {HsvaColor} from '../../../interfaces/hsva-color.interface';
+import {Interaction} from '../../../interfaces/interaction.interface';
 
 
 @Component({
   selector: 'saturation',
   templateUrl: './saturation.component.html',
-  styleUrls: ['./saturation.component.scss']
+  styleUrls: ['./saturation.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SaturationComponent implements OnInit, DoCheck {
-
-  @Input() public color: HsvaColor = defaultHsvaColor;
+export class SaturationComponent implements DoCheck {
+  @Input() color: HsvaColor = defaultHsvaColor;
 
   public top = '';
   public left = '';
   public bgColor = '';
   public grColor = '';
 
-  constructor() { }
+  @Output() move = new EventEmitter<HsvaColor>();
 
-  @Output() move = new EventEmitter();
-
-  ngOnInit(): void {
+  constructor(
+    private cdr: ChangeDetectorRef,
+  ) {
   }
 
   ngDoCheck(): void {
@@ -38,7 +34,8 @@ export class SaturationComponent implements OnInit, DoCheck {
     this.top = `${100 - color.v}%`;
     this.left = `${color.s}%`;
     this.bgColor = hsvaToHslString(this.color);
-    this.grColor = hsvaToHslString({ h: color.h, s: 100, v: 100, a: 0 });
+    this.grColor = hsvaToHslString({h: color.h, s: 100, v: 100, a: 0});
+    this.cdr.markForCheck();
   }
 
   onMove($event: Interaction): void {

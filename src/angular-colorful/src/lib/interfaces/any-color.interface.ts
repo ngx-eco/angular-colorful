@@ -1,6 +1,4 @@
-// Project
-import { ObjectColor } from './object-color.interface';
-
+import {ObjectColor} from './object-color.interface';
 
 
 export type AnyColor = string | ObjectColor;

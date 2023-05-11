@@ -1,11 +1,11 @@
-// Project
-import { hexToRgba } from './convert';
-import { ObjectColor } from '../interfaces/object-color.interface';
-
+import {hexToRgba} from './convert';
+import {ObjectColor} from '../interfaces/object-color.interface';
 
 
 export const equalColorObjects = (first: ObjectColor, second: ObjectColor): boolean => {
-  if (first === second) return true;
+  if (first === second) {
+    return true;
+  }
 
   for (const prop in first) {
     // The following allows for a type-safe calling of this function (first & second have to be HSL, HSV, or RGB)
@@ -16,8 +16,9 @@ export const equalColorObjects = (first: ObjectColor, second: ObjectColor): bool
     if (
       ((first as unknown) as Record<string, number>)[prop] !==
       ((second as unknown) as Record<string, number>)[prop]
-    )
-    return false;
+    ) {
+      return false;
+    }
   }
 
   return true;
@@ -28,7 +29,9 @@ export const equalColorString = (first: string, second: string): boolean => {
 };
 
 export const equalHex = (first: string, second: string): boolean => {
-  if (first.toLowerCase() === second.toLowerCase()) return true;
+  if (first.toLowerCase() === second.toLowerCase()) {
+    return true;
+  }
 
   // To compare colors like `#FFF` and `ffffff` we convert them into RGB objects
   return equalColorObjects(hexToRgba(first), hexToRgba(second));

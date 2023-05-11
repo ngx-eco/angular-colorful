@@ -13,7 +13,7 @@ import {Interaction} from '../../../interfaces/interaction.interface';
 })
 export class InteractiveComponent implements OnInit {
 
-  @Input() public top = '';
+  @Input() public top = '50%';
   @Input() public left = '';
   @Input() public color = '';
 

@@ -1,39 +1,22 @@
-// Angular
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-// Project
-import { defaultHsvaColor } from '../../../utils/constants';
-import { HsvaColor } from '../../../interfaces/hsva-color.interface';
-
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {defaultHsvaColor} from '../../../utils/constants';
+import {HsvaColor} from '../../../interfaces/hsva-color.interface';
 
 
 @Component({
   selector: 'alpha-color-picker',
   templateUrl: './alpha-color-picker.component.html',
-  styleUrls: ['./alpha-color-picker.component.scss']
+  styleUrls: ['./alpha-color-picker.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AlphaColorPickerComponent implements OnInit {
+export class AlphaColorPickerComponent {
+  @Input() color: HsvaColor = defaultHsvaColor;
 
-  private _color: HsvaColor = defaultHsvaColor;
+  @Output() colorChanged: EventEmitter<HsvaColor> = new EventEmitter<HsvaColor>();
 
-  @Input() public set color(color: HsvaColor) {
-    this._color = color;
-  }
-
-  public get color(): HsvaColor {
-    return this._color;
-  }
-
-  constructor() { }
-
-  @Output() onColorChanged = new EventEmitter<HsvaColor>();
-
-  ngOnInit(): void {
-  }
-
-  colorChanged(color: HsvaColor): void {
+  onColorChanged(color: HsvaColor): void {
     this.color = color;
-    this.onColorChanged.emit(color);
+    this.colorChanged.emit(color);
   }
 
 }

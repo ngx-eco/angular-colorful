@@ -1,44 +1,29 @@
-// Angular
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-// Project
-import { hslStringToHsva, hsvaToHslString } from '../../utils/convert';
-import { ColorModel } from '../../interfaces/color-model.interface';
-import { HsvaColor } from '../../interfaces/hsva-color.interface';
-import {defaultHsvaColor} from '../../utils/constants';
-
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {hslStringToHsva, hsvaToHslString} from '../../utils/convert';
+import {ColorModel} from '../../interfaces/color-model.interface';
+import {HsvaColor} from '../../interfaces/hsva-color.interface';
+import {defaultHslaStringColor, defaultHsvaColor} from '../../utils/constants';
 
 
 @Component({
   selector: 'hsla-string-color-picker',
   templateUrl: './hsla-string-color-picker.component.html',
-  styleUrls: ['./hsla-string-color-picker.component.scss']
+  styleUrls: ['./hsla-string-color-picker.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HslaStringColorPickerComponent implements OnInit, ColorModel<string> {
+export class HslaStringColorPickerComponent implements OnChanges, ColorModel<string> {
+  @Input() color: string = defaultHslaStringColor;
+
+  public toHsva = hslStringToHsva;
+  public fromHsva = hsvaToHslString;
 
   public hsvaColor: HsvaColor = defaultHsvaColor;
-  private _color = '';
 
-  @Input() public set color(color: string) {
-    this._color = color || this.defaultColor;
-    this.hsvaColor = this.toHsva(color || this.defaultColor);
+  @Output() colorChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  ngOnChanges(): void {
+    this.hsvaColor = this.toHsva(this.color);
   }
-
-  public get color(): string {
-    return this._color;
-  }
-
-  public defaultColor = 'hsl(0, 0%, 0%)';
-
-  public toHsva = (hsl: string): HsvaColor => hslStringToHsva(hsl);
-
-  public fromHsva = (hsla: HsvaColor): string => hsvaToHslString(hsla);
-
-  constructor() { }
-
-  ngOnInit(): void { }
-
-  @Output() colorChanged = new EventEmitter<string>();
 
   onColorChanged(color: HsvaColor): void {
     this.colorChanged.emit(this.fromHsva(color));
