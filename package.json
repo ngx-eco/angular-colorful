@@ -23,7 +23,6 @@
     "lib:start": "ng build angular-colorful --watch",
     "lib:build": "ng build angular-colorful --configuration production && node tools/build-lib.js",
     "lib:test": "ng test angular-colorful",
-    "lib:size": "size-limit",
     "lib:lint": "ng lint angular-colorful",
     "lib:lint:fix": "ng lint angular-colorful --fix",
     "lib:publish": "npm run lib:build && cd dist/lib && npm pack && npm publish",
@@ -48,7 +47,6 @@
     "@angular-devkit/build-angular": "^16.0.1",
     "@angular/cli": "^16.0.1",
     "@angular/compiler-cli": "^16.0.1",
-    "@size-limit/preset-small-lib": "^4.7.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
@@ -58,7 +56,6 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "ng-packagr": "^16.0.1",
     "shelljs": "^0.8.5",
-    "size-limit": "^4.7.0",
     "stylelint": "^13.7.2",
     "stylelint-order": "^4.1.0",
     "typescript": "~5.0.2"
