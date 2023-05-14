@@ -157,8 +157,8 @@ export const rgbaStringToHsva = (rgbaString: string): HsvaColor => {
 
 export const rgbStringToHsva = rgbaStringToHsva;
 
-const format = (number: number) => {
-  const hex = number.toString(16);
+const format = (num: number) => {
+  const hex = num.toString(16);
   return hex.length < 2 ? '0' + hex : hex;
 };
 
