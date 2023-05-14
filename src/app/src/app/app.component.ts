@@ -1,12 +1,18 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {AnyColor, hsvaToRgbaString, RgbaColor, rgbaToHsva} from 'angular-colorful';
+import {ChangeDetectionStrategy, Component, isDevMode, OnInit} from '@angular/core';
+import {AngularColorfulModule, AnyColor, hsvaToRgbaString, RgbaColor, rgbaToHsva} from 'angular-colorful';
+import {BrowserModule} from '@angular/platform-browser';
 
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    BrowserModule,
+    AngularColorfulModule,
+  ]
 })
 export class AppComponent implements OnInit {
 
