@@ -1,6 +1,8 @@
-import {ChangeDetectionStrategy, Component, isDevMode, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {AngularColorfulModule, AnyColor, hsvaToRgbaString, RgbaColor, rgbaToHsva} from 'angular-colorful';
-import {BrowserModule} from '@angular/platform-browser';
+import {NgDocModule, NgDocNavbarModule, NgDocSidebarModule} from '@ng-doc/app';
+import {CommonModule} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
 
 
 @Component({
@@ -10,7 +12,11 @@ import {BrowserModule} from '@angular/platform-browser';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    BrowserModule,
+    NgDocModule,
+    CommonModule,
+    RouterOutlet,
+    NgDocNavbarModule,
+    NgDocSidebarModule,
     AngularColorfulModule,
   ]
 })

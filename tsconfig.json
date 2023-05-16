@@ -21,13 +21,7 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "paths": {
-      "angular-colorful": [
-        "dist/lib/angular-colorful",
-        "dist/lib"
-      ]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

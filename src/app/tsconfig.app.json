@@ -3,7 +3,18 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "angular-colorful": [
+        "dist/lib"
+      ],
+      "@ng-doc/generated": [
+        ".ng-doc/app/index.ts"
+      ],
+      "@ng-doc/generated/*": [
+        ".ng-doc/app/*"
+      ]
+    }
   },
   "files": [
     "./src/main.ts"

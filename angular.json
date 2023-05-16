@@ -22,7 +22,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@ng-doc/builder:browser",
           "options": {
             "outputPath": "dist/app",
             "index": "src/app/src/index.html",
@@ -33,16 +33,35 @@
             "tsConfig": "src/app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ng-doc/app/assets",
+                "output": "assets/ng-doc/app"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ng-doc/ui-kit/assets",
+                "output": "assets/ng-doc/ui-kit"
+              },
+              {
+                "glob": "**/*",
+                "input": ".ng-doc/app/assets",
+                "output": "assets/ng-doc"
+              },
               "src/app/src/favicon.ico",
               "src/app/src/assets",
               "src/app/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/@ng-doc/app/styles/global.css",
               "src/app/src/styles.scss"
             ],
             "scripts": [],
             "serviceWorker": true,
-            "ngswConfigPath": "src/app/ngsw-config.json"
+            "ngswConfigPath": "src/app/ngsw-config.json",
+            "allowedCommonJsDependencies": [
+              "@ng-doc/core"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,7 +91,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@ng-doc/builder:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
