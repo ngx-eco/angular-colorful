@@ -1,194 +1,57 @@
-.demo {
-  position: relative;
-  flex-shrink: 0;
-  width: 200px;
-}
+:host {
+  &[data-ng-doc-is-landing='true'] {
+    --ng-doc-page-max-width: auto;
+    --ng-doc-page-padding: 0;
+    --ng-doc-main-padding: 0;
 
-.color--picker {
-  width: 100%;
-  border-radius: 9px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-}
+    ng-doc-navbar {
+      transition: 300ms ease-in-out;
 
-.field {
-  position: absolute;
-  top: calc(100% + 16px);
-  left: calc(50% - 45px);
-  width: 90px;
-  font-family: 'PT Mono', monospace;
+      &:before {
+        transition: 300ms ease-in-out;
+      }
 
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.33;
-    pointer-events: none;
-    content: '#';
-  }
-}
-
-.hex-input {
-  display: block;
-  width: 100%;
-  padding-left: 0.7em;
-  color: inherit;
-  text-transform: uppercase;
-  background: none;
-  outline: none;
-  transition: opacity 0.2s;
-  opacity: 0.5;
-}
-
-.hex-input:focus,
-.hex-input:hover {
-  opacity: 1;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 720px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 120px 32px;
-  color: #ffffff;
-  transition: color 0.15s;
-
-  &--content {
-    flex-grow: 1;
-    margin-left: 40px;
-  }
-
-  &--title {
-    margin-bottom: 16px;
-    font-size: 44px;
-    line-height: 1;
-  }
-
-  &--description {
-    max-width: 16em;
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 2px solid currentColor;
-      opacity: 0.8;
-    }
-
-    a:hover {
-      opacity: 1;
+      &:not(.has-shadow) {
+        --ng-doc-navbar-background: transparent;
+      }
     }
   }
 }
 
-.links {
-  display: flex;
-  margin-top: 32px;
-}
-
-.link {
+.brand {
   display: flex;
   align-items: center;
-  height: 44px;
-  margin-right: 16px;
-  padding: 0 16px;
-  color: inherit;
+  margin: 0;
+  font-size: 22px;
   text-decoration: none;
-  border: 2px solid currentColor;
-  border-radius: 6px;
-  opacity: 0.8;
+  color: var(--ng-doc-text);
 
-  &:last-child {
-    margin-right: 0;
+  &-angular {
+    font-weight: 400;
   }
 
-  &:hover {
-    opacity: 1;
-  }
-
-  &--icon {
-    margin-right: 4px;
-  }
-
-  &--separator {
-    width: 2px;
-    height: 100%;
-    margin: 0 12px;
-    background: currentColor;
+  &-colorful {
+    font-weight: 900;
   }
 }
 
-.preview {
+.controls {
+  display: flex;
+
+  > * {
+    margin-left: calc(var(--ng-doc-base-gutter) * 2);
+
+    @media screen and (max-width: 600px) {
+      margin-left: var(--ng-doc-base-gutter);
+    }
+  }
+}
+
+.ng-doc-footer {
   display: flex;
   align-items: center;
-  padding: 60px;
-  background-color: #ffffff;
-  border-top: 1px solid #aaaaaa;
-
-  &--title {
-    flex-shrink: 0;
-    width: 7em;
-    padding-right: 20px;
-    text-align: right;
-  }
-
-  &--demo {
-    flex-shrink: 0;
-  }
-
-  &--output {
-    margin-left: 20px;
-    padding: 4px 8px;
-    font-family: 'PT Mono', monospace;
-    background-color: #eeeeee;
-    border-radius: 4px;
-  }
-}
-
-@media (max-width: 767px) {
-  .header {
-    flex-direction: column;
-    max-width: 360px;
-    padding: 40px 20px;
-
-    &--content {
-      margin-top: 40px;
-      margin-left: 0;
-      text-align: center;
-    }
-
-    &--title {
-      font-size: 32px;
-    }
-
-    &--description {
-      margin-right: auto;
-      margin-left: auto;
-    }
-  }
-
-  .links {
-    justify-content: space-evenly;
-  }
-
-  .field {
-    display: none;
-  }
-
-  .preview {
-    flex-direction: column;
-    align-items: center;
-
-    &--title {
-      padding-right: 0;
-      padding-bottom: 10px;
-      text-align: center;
-    }
-
-    &--output {
-      margin-top: 15px;
-      margin-left: 0;
-    }
-  }
+  justify-content: center;
+  padding: calc(var(--ng-doc-base-gutter) * 3);
+  color: var(--ng-doc-text-muted);
+  font-size: 12px;
 }

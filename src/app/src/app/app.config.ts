@@ -4,6 +4,7 @@ import {provideServiceWorker} from '@angular/service-worker';
 import {RouterModule} from '@angular/router';
 import {NgDocDefaultSearchEngine, NgDocModule, provideSearchEngine} from '@ng-doc/app';
 import {NG_DOC_ROUTING, NgDocGeneratedModule} from '@ng-doc/generated';
+import {appRouting, appRoutingOptions} from './app.routing';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,11 +13,7 @@ export const appConfig: ApplicationConfig = {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    importProvidersFrom(RouterModule.forRoot(NG_DOC_ROUTING, {
-      scrollPositionRestoration: 'enabled',
-      anchorScrolling: 'enabled',
-      scrollOffset: [0, 70]
-    })),
+    importProvidersFrom(RouterModule.forRoot(appRouting, appRoutingOptions)),
     importProvidersFrom(NgDocModule.forRoot()),
     importProvidersFrom(NgDocGeneratedModule.forRoot()),
     provideSearchEngine(NgDocDefaultSearchEngine),
