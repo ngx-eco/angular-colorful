@@ -21,7 +21,18 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-colorful": [
+        "dist/lib"
+      ],
+      "@ng-doc/generated": [
+        ".ng-doc/app/index.ts"
+      ],
+      "@ng-doc/generated/*": [
+        ".ng-doc/app/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

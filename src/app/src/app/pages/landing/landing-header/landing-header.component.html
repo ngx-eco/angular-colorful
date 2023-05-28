@@ -1,0 +1,44 @@
+<header>
+  <div
+    class="header"
+    [ngStyle]="{
+  'color': color.textColor,
+  'background': color.appColor
+  }">
+    <div class="demo">
+      <rgba-color-picker
+        class="color-picker"
+        [color]="color.color"
+        (colorChanged)="color.colorChanged($event)">
+      </rgba-color-picker>
+    </div>
+    <div class="header__content">
+      <h1 class="header__title">Angular Colorful 🎨</h1>
+      <h2 class="header__description">A tiny color picker component for modern Angular apps.</h2>
+      <nav class="links">
+        <a
+          class="link"
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/fil0157/angular-colorful">
+          GitHub
+          <!-- <span class="link--separator"></span> -->
+          <!-- <Star class="linkIcon"></Star> -->
+          <!-- {stargazerCount} -->
+        </a>
+        <a
+          class="link"
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.npmjs.com/package/angular-colorful">
+          NPM
+        </a>
+        <a
+          class="link"
+          routerLink="docs">
+          Docs
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
