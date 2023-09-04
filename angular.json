@@ -48,8 +48,12 @@
                 "input": ".ng-doc/app/assets",
                 "output": "assets/ng-doc"
               },
+              {
+                "glob": "**/*",
+                "input": "src/app/src/assets",
+                "output": "assets"
+              },
               "src/app/src/favicon.ico",
-              "src/app/src/assets",
               "src/app/manifest.webmanifest"
             ],
             "styles": [

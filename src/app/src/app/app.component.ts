@@ -1,11 +1,12 @@
 import {ChangeDetectionStrategy, Component, HostBinding} from '@angular/core';
-import {NgDocModule, NgDocNavbarModule, NgDocSidebarModule, NgDocThemeToggleModule} from '@ng-doc/app';
+import {NgDocNavbarComponent, NgDocRootComponent, NgDocSidebarComponent, NgDocThemeToggleComponent} from '@ng-doc/app';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {
-  NgDocButtonIconModule,
-  NgDocIconModule, NgDocMediaQueryModule,
-  NgDocTooltipModule,
+  NgDocButtonIconComponent,
+  NgDocIconComponent,
+  NgDocMediaQueryDirective,
+  NgDocTooltipDirective,
   preventInitialChildAnimations
 } from '@ng-doc/ui-kit';
 
@@ -17,16 +18,16 @@ import {
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    NgDocModule,
     CommonModule,
     RouterModule,
-    NgDocIconModule,
-    NgDocNavbarModule,
-    NgDocSidebarModule,
-    NgDocTooltipModule,
-    NgDocButtonIconModule,
-    NgDocMediaQueryModule,
-    NgDocThemeToggleModule,
+    NgDocRootComponent,
+    NgDocIconComponent,
+    NgDocNavbarComponent,
+    NgDocTooltipDirective,
+    NgDocSidebarComponent,
+    NgDocButtonIconComponent,
+    NgDocMediaQueryDirective,
+    NgDocThemeToggleComponent,
   ],
   animations: [preventInitialChildAnimations],
 })
