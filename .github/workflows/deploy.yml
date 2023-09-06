@@ -32,9 +32,11 @@ jobs:
         run: npm run build
 
       - name: Deploy app
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: dist/app/
-          remote: ${{ secrets.REMOTE_TARGET }}
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-rltgoDzvO --delete-before"
+          SOURCE: "dist/app/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
