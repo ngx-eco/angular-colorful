@@ -31,12 +31,16 @@ jobs:
       - name: Build app
         run: npm run build
 
+      - run: sudo apt-get install rsync
+
       - name: Deploy app
-        uses: easingthemes/ssh-deploy@main
+        uses: Pendect/action-rsyncer@v1.1.0
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rltgoDzvO --delete-before"
-          SOURCE: "dist/app/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+          DEPLOY_KEY: ${{secrets.SERVER_SSH_KEY}}
+        with:
+          flags: '-avc --delete'
+          src: 'dist/app/'
+          dest: '${{secrets.REMOTE_USER}}@"${{secrets.REMOTE_HOST}}":${{secrets.REMOTE_TARGET}}'
+
+      - name: Display status from deploy
+        run: echo "${{ steps.deploy.outputs.status }}"
