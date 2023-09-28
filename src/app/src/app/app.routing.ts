@@ -1,4 +1,4 @@
-import {ExtraOptions, Routes} from '@angular/router';
+import {Routes} from '@angular/router';
 
 export const appRouting: Routes = [
   {
@@ -15,9 +15,3 @@ export const appRouting: Routes = [
     redirectTo: 'docs/start',
   },
 ];
-
-export const appRoutingOptions: ExtraOptions = {
-  scrollPositionRestoration: 'enabled',
-  anchorScrolling: 'enabled',
-  scrollOffset: [0, 70]
-};
