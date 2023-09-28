@@ -13,10 +13,12 @@ import {
 } from '@ng-doc/app';
 import {provideNgDocContext} from '@ng-doc/generated';
 import {appRouting, appRoutingOptions} from './app.routing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
+    provideHttpClient(withInterceptorsFromDi()),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000'
