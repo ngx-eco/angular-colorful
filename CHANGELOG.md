@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.0.0 (November 14, 2023)
+- Angular updated (v17.0.2)
+
 ## 4.0.0 (September 29, 2023)
 - Angular updated (v16.2.4)
 - Refactoring
