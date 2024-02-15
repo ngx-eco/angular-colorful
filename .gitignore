@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 ## NgDoc folder
-.ng-doc
+/ng-doc

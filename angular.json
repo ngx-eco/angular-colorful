@@ -22,11 +22,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@ng-doc/builder:browser",
+          "builder": "@ng-doc/builder:application",
           "options": {
             "outputPath": "dist/app",
             "index": "src/app/src/index.html",
-            "main": "src/app/src/main.ts",
+            "browser": "src/app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -45,7 +45,7 @@
               },
               {
                 "glob": "**/*",
-                "input": ".ng-doc/app/assets",
+                "input": "ng-doc/app/assets",
                 "output": "assets/ng-doc"
               },
               {
@@ -61,8 +61,6 @@
               "src/app/src/styles.scss"
             ],
             "scripts": [],
-            "serviceWorker": true,
-            "ngswConfigPath": "src/app/ngsw-config.json",
             "allowedCommonJsDependencies": [
               "@ng-doc/core"
             ]
@@ -81,12 +79,11 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -98,10 +95,10 @@
           "builder": "@ng-doc/builder:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "buildTarget": "app:build:production"
             },
             "development": {
-              "browserTarget": "app:build:development"
+              "buildTarget": "app:build:development"
             }
           },
           "defaultConfiguration": "development"
