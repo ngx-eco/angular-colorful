@@ -1,7 +1,7 @@
 import {isDevMode} from "@angular/core";
 import {bootstrapApplication} from '@angular/platform-browser';
 import {provideRouter, withInMemoryScrolling} from "@angular/router";
-import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import {provideServiceWorker} from "@angular/service-worker";
 import {AppComponent} from './app/app.component';
 import {appRouting} from "./app/app.routing";
