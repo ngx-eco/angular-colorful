@@ -1,11 +1,11 @@
-<app-landing-header></app-landing-header>
+<app-landing-header/>
+
 <div class="preview">
   <div class="preview--title">{{colors['hex'].name}}</div>
   <hex-color-picker
     class="preview--demo"
     color="#406090"
-    (colorChanged)="colorsChanged($event, 'hex')">
-  </hex-color-picker>
+    (colorChanged)="colorsChanged($event, 'hex')"/>
   <div class="preview--output">{{getName('hex')}}</div>
 </div>
 <hr>
@@ -14,8 +14,7 @@
   <rgb-color-picker
     class="preview--demo"
     [color]="{ r: 60, g: 80, b: 120 }"
-    (colorChanged)="colorsChanged($event, 'rgb')">
-  </rgb-color-picker>
+    (colorChanged)="colorsChanged($event, 'rgb')"/>
   <div class="preview--output">{{getName('rgb')}}</div>
 </div>
 <hr>
@@ -24,8 +23,7 @@
   <rgb-string-color-picker
     class="preview--demo"
     color="rgb(60, 80, 120)"
-    (colorChanged)="colorsChanged($event, 'rgbString')">
-  </rgb-string-color-picker>
+    (colorChanged)="colorsChanged($event, 'rgbString')"/>
   <div class="preview--output">{{getName('rgbString')}}</div>
 </div>
 <hr>
@@ -34,8 +32,7 @@
   <rgba-color-picker
     class="preview--demo"
     [color]="{ r: 60, g: 80, b: 120, a: 0.5 }"
-    (colorChanged)="colorsChanged($event, 'rgba')">
-  </rgba-color-picker>
+    (colorChanged)="colorsChanged($event, 'rgba')"/>
   <div class="preview--output">{{getName('rgba')}}</div>
 </div>
 <hr>
@@ -44,8 +41,7 @@
   <rgba-string-color-picker
     class="preview--demo"
     color="rgba(60, 80, 120, 0.5)"
-    (colorChanged)="colorsChanged($event, 'rgbaString')">
-  </rgba-string-color-picker>
+    (colorChanged)="colorsChanged($event, 'rgbaString')"/>
   <div class="preview--output">{{getName('rgbaString')}}</div>
 </div>
 <hr>
@@ -54,8 +50,7 @@
   <hsl-color-picker
     class="preview--demo"
     [color]="{ h: 200, s: 25, l: 32 }"
-    (colorChanged)="colorsChanged($event, 'hsl')">
-  </hsl-color-picker>
+    (colorChanged)="colorsChanged($event, 'hsl')"/>
   <div class="preview--output">{{getName('hsl')}}</div>
 </div>
 <hr>
@@ -64,8 +59,7 @@
   <hsl-string-color-picker
     class="preview--demo"
     color="hsl(200, 25, 32)"
-    (colorChanged)="colorsChanged($event, 'hslString')">
-  </hsl-string-color-picker>
+    (colorChanged)="colorsChanged($event, 'hslString')"/>
   <div class="preview--output">{{getName('hslString')}}</div>
 </div>
 <hr>
@@ -74,8 +68,7 @@
   <hsla-color-picker
     class="preview--demo"
     [color]="{ h: 200, s: 25, l: 32, a: 0.5 }"
-    (colorChanged)="colorsChanged($event, 'hsla')">
-  </hsla-color-picker>
+    (colorChanged)="colorsChanged($event, 'hsla')"/>
   <div class="preview--output">{{getName('hsla')}}</div>
 </div>
 <hr>
@@ -84,8 +77,7 @@
   <hsla-string-color-picker
     class="preview--demo"
     color="hsla(200, 25, 32, 0.5)"
-    (colorChanged)="colorsChanged($event, 'hslaString')">
-  </hsla-string-color-picker>
+    (colorChanged)="colorsChanged($event, 'hslaString')"/>
   <div class="preview--output">{{getName('hslaString')}}</div>
 </div>
 <hr>
@@ -94,8 +86,7 @@
   <hsv-color-picker
     class="preview--demo"
     [color]="{ h: 200, s: 25, v: 50 }"
-    (colorChanged)="colorsChanged($event, 'hsv')">
-  </hsv-color-picker>
+    (colorChanged)="colorsChanged($event, 'hsv')"/>
   <div class="preview--output">{{getName('hsv')}}</div>
 </div>
 <hr>
@@ -104,8 +95,7 @@
   <hsv-string-color-picker
     class="preview--demo"
     color="hsv(200, 25, 50)"
-    (colorChanged)="colorsChanged($event, 'hsvString')">
-  </hsv-string-color-picker>
+    (colorChanged)="colorsChanged($event, 'hsvString')"/>
   <div class="preview--output">{{getName('hsvString')}}</div>
 </div>
 <hr>
@@ -114,8 +104,7 @@
   <hsva-color-picker
     class="preview--demo"
     [color]="{ h: 200, s: 25, v: 50, a: 0.5 }"
-    (colorChanged)="colorsChanged($event, 'hsva')">
-  </hsva-color-picker>
+    (colorChanged)="colorsChanged($event, 'hsva')"/>
   <div class="preview--output">{{getName('hsva')}}</div>
 </div>
 <hr>
@@ -124,8 +113,7 @@
   <hsva-string-color-picker
     class="preview--demo"
     color="hsva(200, 25, 50, 0.5)"
-    (colorChanged)="colorsChanged($event, 'hsvaString')">
-  </hsva-string-color-picker>
+    (colorChanged)="colorsChanged($event, 'hsvaString')"/>
   <div class="preview--output">{{getName('hsvaString')}}</div>
 </div>
 <hr>

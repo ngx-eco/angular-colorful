@@ -2,15 +2,14 @@
   <div
     class="header"
     [ngStyle]="{
-  'color': color.textColor,
-  'background': color.appColor
-  }">
+    'color': color.textColor,
+    'background': color.appColor
+    }">
     <div class="demo">
       <rgba-color-picker
         class="color-picker"
         [color]="color.color"
-        (colorChanged)="color.colorChanged($event)">
-      </rgba-color-picker>
+        (colorChanged)="color.colorChanged($event)"/>
     </div>
     <div class="header__content">
       <h1 class="header__title">Angular Colorful 🎨</h1>

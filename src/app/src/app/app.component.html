@@ -8,12 +8,11 @@
     [search]="!isLandingPage"
     [leftContent]="leftContent"
     [hamburger]="!isLandingPage"
-    [rightContent]="rightContent">
-  </ng-doc-navbar>
+    [rightContent]="rightContent"/>
 
-  <ng-doc-sidebar></ng-doc-sidebar>
+  <ng-doc-sidebar/>
 
-  <router-outlet></router-outlet>
+  <router-outlet/>
 
 </ng-doc-root>
 
@@ -26,7 +25,7 @@
       routerLink="/"
       ng-doc-button-icon
       ngDocTooltip="Go main page">
-      <ng-doc-icon [size]="24" icon="home"></ng-doc-icon>
+      <ng-doc-icon [size]="24" icon="home"/>
     </a>
   </ng-template>
   <ng-template
@@ -48,7 +47,7 @@
 
 <ng-template #rightContent>
   <div @preventInitialChild class="controls">
-    <ng-doc-theme-toggle></ng-doc-theme-toggle>
+    <ng-doc-theme-toggle/>
     <a
       size="large"
       target="_blank"
@@ -56,7 +55,7 @@
       ng-doc-button-icon
       ngDocTooltip="Repository on GitHub"
       href="https://github.com/ngx-eco/angular-colorful">
-      <ng-doc-icon [size]="24" customIcon="github"></ng-doc-icon>
+      <ng-doc-icon [size]="24" customIcon="github"/>
     </a>
     <a
       size="large"
@@ -65,7 +64,7 @@
       ng-doc-button-icon
       ngDocTooltip="Package on NPM"
       href="https://www.npmjs.com/package/angular-colorful">
-      <ng-doc-icon [size]="24" customIcon="package"></ng-doc-icon>
+      <ng-doc-icon [size]="24" customIcon="package"/>
     </a>
   </div>
 </ng-template>

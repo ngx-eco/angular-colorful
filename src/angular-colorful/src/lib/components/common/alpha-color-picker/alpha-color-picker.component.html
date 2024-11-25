@@ -1,16 +1,7 @@
 <div class="color-picker">
   <div class="color-picker__saturation">
-    <saturation
-      [color]="color"
-      (move)="onColorChanged($event)">
-    </saturation>
+    <saturation [color]="color" (move)="onColorChanged($event)"/>
   </div>
-  <hue
-    [color]="color"
-    (move)="onColorChanged($event)">
-  </hue>
-  <alpha
-    [color]="color"
-    (move)="onColorChanged($event)">
-  </alpha>
+  <hue [color]="color" (move)="onColorChanged($event)"/>
+  <alpha [color]="color" (move)="onColorChanged($event)"/>
 </div>
