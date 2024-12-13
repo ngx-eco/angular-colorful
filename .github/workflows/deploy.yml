@@ -40,19 +40,5 @@ jobs:
           local-dir: './dist/app/browser/'
           server-dir: ${{ secrets.SERVER_DIR }}
 
-
-
-
-      - run: sudo apt-get install rsync
-
-      - name: Deploy app
-        uses: Pendect/action-rsyncer@v1.1.0
-        env:
-          DEPLOY_KEY: ${{secrets.SERVER_SSH_KEY}}
-        with:
-          flags: '-avc --delete'
-          src: 'dist/app/'
-          dest: '${{secrets.REMOTE_USER}}@"${{secrets.REMOTE_HOST}}":${{secrets.REMOTE_TARGET}}'
-
       - name: Display status from deploy
         run: echo "${{ steps.deploy.outputs.status }}"
