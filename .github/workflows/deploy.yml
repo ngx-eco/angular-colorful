@@ -39,6 +39,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           local-dir: './dist/app/browser/'
           server-dir: ${{ secrets.SERVER_DIR }}
-
-      - name: Display status from deploy
-        run: echo "${{ steps.deploy.outputs.status }}"
+          dangerous-clean-slate: true
