@@ -38,5 +38,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: './dist/app/browser/'
-          server-dir: ${{ secrets.SERVER_DIR }}
+          server-dir: './angular-colorful.ru/'
           dangerous-clean-slate: true
