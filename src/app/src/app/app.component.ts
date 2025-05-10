@@ -5,7 +5,6 @@ import {RouterModule} from '@angular/router';
 import {
   NgDocButtonIconComponent,
   NgDocIconComponent,
-  NgDocMediaQueryDirective,
   NgDocTooltipDirective,
   preventInitialChildAnimations
 } from '@ng-doc/ui-kit';
@@ -25,7 +24,6 @@ import {
         NgDocTooltipDirective,
         NgDocSidebarComponent,
         NgDocButtonIconComponent,
-        NgDocMediaQueryDirective,
         NgDocThemeToggleComponent,
     ],
     animations: [preventInitialChildAnimations]

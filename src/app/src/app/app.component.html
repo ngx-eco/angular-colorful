@@ -3,71 +3,85 @@
   [noWidthLimit]="isLandingPage"
   [footerContent]="footerContent">
 
-  <ng-doc-navbar
-    [glassEffect]="false"
-    [search]="!isLandingPage"
-    [leftContent]="leftContent"
-    [hamburger]="!isLandingPage"
-    [rightContent]="rightContent"/>
+  <ng-doc-navbar [glassEffect]="false" [search]="!isLandingPage" [hamburger]="!isLandingPage">
+
+    <div ngDocNavbarLeft>
+<!--      <ng-template-->
+<!--        #ngDocMediaQuery="ngDocMediaQuery"-->
+<!--        [ngDocMediaQuery]="[ngDocMediaQuery.breakpoints.XSmall]">-->
+<!--        <a-->
+<!--          size="large"-->
+<!--          routerLink="/"-->
+<!--          ng-doc-button-icon-->
+<!--          ngDocTooltip="Go main page">-->
+<!--          <ng-doc-icon [size]="24" icon="home"/>-->
+<!--        </a>-->
+<!--      </ng-template>-->
+      <ng-template>
+        <a
+          size="large"
+          routerLink="/"
+          ng-doc-button-icon
+          ngDocTooltip="Go main page">
+          <ng-doc-icon [size]="24" icon="home"/>
+        </a>
+      </ng-template>
+<!--      <ng-template-->
+<!--        #ngDocMediaQuery="ngDocMediaQuery"-->
+<!--        [ngDocMediaQuery]="[-->
+<!--	  	ngDocMediaQuery.breakpoints.Small,-->
+<!--			ngDocMediaQuery.breakpoints.Medium,-->
+<!--			ngDocMediaQuery.breakpoints.Large,-->
+<!--			ngDocMediaQuery.breakpoints.XLarge-->
+<!--		]">-->
+<!--        <a-->
+<!--          class="brand"-->
+<!--          routerLink="/">-->
+<!--          <span class="brand-angular">Angular</span>-->
+<!--          <span class="brand-colorful">Colorful</span>-->
+<!--        </a>-->
+<!--      </ng-template>-->
+      <ng-template>
+        <a
+          class="brand"
+          routerLink="/">
+          <span class="brand-angular">Angular</span>
+          <span class="brand-colorful">Colorful</span>
+        </a>
+      </ng-template>
+    </div>
+
+    <div ngDocNavbarRight>
+      <div @preventInitialChild class="controls">
+        <ng-doc-theme-toggle/>
+        <a
+          size="large"
+          target="_blank"
+          rel="noreferrer"
+          ng-doc-button-icon
+          ngDocTooltip="Repository on GitHub"
+          href="https://github.com/ngx-eco/angular-colorful">
+          <ng-doc-icon [size]="24" customIcon="github"/>
+        </a>
+        <a
+          size="large"
+          target="_blank"
+          rel="noreferrer"
+          ng-doc-button-icon
+          ngDocTooltip="Package on NPM"
+          href="https://www.npmjs.com/package/angular-colorful">
+          <ng-doc-icon [size]="24" customIcon="package"/>
+        </a>
+      </div>
+    </div>
+
+  </ng-doc-navbar>
 
   <ng-doc-sidebar/>
 
   <router-outlet/>
 
 </ng-doc-root>
-
-<ng-template #leftContent>
-  <ng-template
-    #ngDocMediaQuery="ngDocMediaQuery"
-    [ngDocMediaQuery]="[ngDocMediaQuery.breakpoints.XSmall]">
-    <a
-      size="large"
-      routerLink="/"
-      ng-doc-button-icon
-      ngDocTooltip="Go main page">
-      <ng-doc-icon [size]="24" icon="home"/>
-    </a>
-  </ng-template>
-  <ng-template
-    #ngDocMediaQuery="ngDocMediaQuery"
-    [ngDocMediaQuery]="[
-	  	ngDocMediaQuery.breakpoints.Small,
-			ngDocMediaQuery.breakpoints.Medium,
-			ngDocMediaQuery.breakpoints.Large,
-			ngDocMediaQuery.breakpoints.XLarge
-		]">
-    <a
-      class="brand"
-      routerLink="/">
-      <span class="brand-angular">Angular</span>
-      <span class="brand-colorful">Colorful</span>
-    </a>
-  </ng-template>
-</ng-template>
-
-<ng-template #rightContent>
-  <div @preventInitialChild class="controls">
-    <ng-doc-theme-toggle/>
-    <a
-      size="large"
-      target="_blank"
-      rel="noreferrer"
-      ng-doc-button-icon
-      ngDocTooltip="Repository on GitHub"
-      href="https://github.com/ngx-eco/angular-colorful">
-      <ng-doc-icon [size]="24" customIcon="github"/>
-    </a>
-    <a
-      size="large"
-      target="_blank"
-      rel="noreferrer"
-      ng-doc-button-icon
-      ngDocTooltip="Package on NPM"
-      href="https://www.npmjs.com/package/angular-colorful">
-      <ng-doc-icon [size]="24" customIcon="package"/>
-    </a>
-  </div>
-</ng-template>
 
 <ng-template #footerContent>
   <div class="ng-doc-footer">MIT © 2023 Filipp Chibisov</div>

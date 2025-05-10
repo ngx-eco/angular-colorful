@@ -35,7 +35,7 @@ bootstrapApplication(AppComponent, {
       }),
     ),
 
-    provideNgDocApp({ defaultThemeId: 'auto' }),
+    provideNgDocApp(),
     provideNgDocContext(),
     provideSearchEngine(NgDocDefaultSearchEngine),
     providePageSkeleton(NG_DOC_DEFAULT_PAGE_SKELETON),

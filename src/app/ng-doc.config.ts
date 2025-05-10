@@ -1,7 +1,6 @@
 import {NgDocConfiguration} from '@ng-doc/builder';
 
 const NgDocConfig: NgDocConfiguration = {
-  pages: 'src/app/src/app',
   routePrefix: 'docs',
   repoConfig: {
     url: 'https://github.com/ngx-eco/angular-colorful',
