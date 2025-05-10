@@ -1,8 +1,10 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {hslStringToHsva, hsvaToHslString} from '../../utils/convert';
 import {ColorModel} from '../../interfaces/color-model.interface';
 import {HsvaColor} from '../../interfaces/hsva-color.interface';
 import {defaultHslaStringColor, defaultHsvaColor} from '../../utils/constants';
+import {AlphaColorPickerComponent} from "../common/alpha-color-picker/alpha-color-picker.component";
 
 
 @Component({
@@ -10,7 +12,7 @@ import {defaultHslaStringColor, defaultHsvaColor} from '../../utils/constants';
     templateUrl: './hsla-string-color-picker.component.html',
     styleUrls: ['./hsla-string-color-picker.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CommonModule, AlphaColorPickerComponent],
 })
 export class HslaStringColorPickerComponent implements OnChanges, ColorModel<string> {
   @Input() color: string = defaultHslaStringColor;

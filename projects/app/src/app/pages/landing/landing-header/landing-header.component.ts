@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {AngularColorfulModule} from 'angular-colorful';
+import {RgbaColorPickerComponent} from "angular-colorful";
 import {ColorService} from '../../../core/services/color.service';
 
 @Component({
@@ -11,7 +11,7 @@ import {ColorService} from '../../../core/services/color.service';
     imports: [
         CommonModule,
         RouterModule,
-        AngularColorfulModule,
+        RgbaColorPickerComponent,
     ]
 })
 export class LandingHeaderComponent implements OnInit {

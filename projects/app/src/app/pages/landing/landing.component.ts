@@ -1,6 +1,21 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {AngularColorfulModule, AnyColor} from 'angular-colorful';
+import {
+  AnyColor,
+  HexColorPickerComponent,
+  HslaColorPickerComponent,
+  HslaStringColorPickerComponent,
+  HslColorPickerComponent,
+  HslStringColorPickerComponent,
+  HsvaColorPickerComponent,
+  HsvaStringColorPickerComponent,
+  HsvColorPickerComponent,
+  HsvStringColorPickerComponent,
+  RgbaColorPickerComponent,
+  RgbaStringColorPickerComponent,
+  RgbColorPickerComponent,
+  RgbStringColorPickerComponent
+} from 'angular-colorful';
 import {RouterModule} from '@angular/router';
 import {LandingHeaderComponent} from './landing-header/landing-header.component';
 
@@ -11,8 +26,20 @@ import {LandingHeaderComponent} from './landing-header/landing-header.component'
     imports: [
         CommonModule,
         RouterModule,
-        AngularColorfulModule,
         LandingHeaderComponent,
+        HexColorPickerComponent,
+        RgbColorPickerComponent,
+        RgbStringColorPickerComponent,
+        RgbaColorPickerComponent,
+        RgbaStringColorPickerComponent,
+        HslColorPickerComponent,
+        HslStringColorPickerComponent,
+        HslaColorPickerComponent,
+        HslaStringColorPickerComponent,
+        HsvColorPickerComponent,
+        HsvStringColorPickerComponent,
+        HsvaColorPickerComponent,
+        HsvaStringColorPickerComponent,
     ]
 })
 export class LandingComponent {

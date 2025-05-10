@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.0 (June 6, 2024)
+- Angular updated (v19.2.10)
+
+### Breaking Changes
+- The `AngularColorfulModule` was removed, use standalone components
+
 ## 6.0.0 (June 6, 2024)
 - Angular updated (v18.0.2)
 

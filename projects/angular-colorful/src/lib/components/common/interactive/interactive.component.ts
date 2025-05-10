@@ -1,5 +1,6 @@
 // Angular
 import {Component, Input, HostListener, OnInit, Output, EventEmitter, ElementRef} from '@angular/core';
+import {CommonModule} from "@angular/common";
 
 // Project
 import {clamp} from '../../../utils/clamp';
@@ -10,7 +11,7 @@ import {Interaction} from '../../../interfaces/interaction.interface';
     selector: 'interactive',
     templateUrl: './interactive.component.html',
     styleUrls: ['./interactive.component.scss'],
-    standalone: false
+    imports: [CommonModule],
 })
 export class InteractiveComponent implements OnInit {
 

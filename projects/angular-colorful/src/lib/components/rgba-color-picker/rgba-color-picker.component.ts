@@ -1,9 +1,11 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {hsvaToRgba, rgbaToHsva} from '../../utils/convert';
 import {HsvaColor} from '../../interfaces/hsva-color.interface';
 import {RgbaColor} from '../../interfaces/rgba-color.interface';
 import {ColorModel} from '../../interfaces/color-model.interface';
 import {defaultHsvaColor, defaultRgbaColor} from '../../utils/constants';
+import {AlphaColorPickerComponent} from "../common/alpha-color-picker/alpha-color-picker.component";
 
 
 @Component({
@@ -11,7 +13,7 @@ import {defaultHsvaColor, defaultRgbaColor} from '../../utils/constants';
     templateUrl: './rgba-color-picker.component.html',
     styleUrls: ['./rgba-color-picker.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CommonModule, AlphaColorPickerComponent],
 })
 export class RgbaColorPickerComponent implements OnChanges, ColorModel<RgbaColor> {
   @Input() color: RgbaColor = defaultRgbaColor;

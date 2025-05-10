@@ -1,6 +1,10 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {defaultHsvaColor} from '../../../utils/constants';
 import {HsvaColor} from '../../../interfaces/hsva-color.interface';
+import {SaturationComponent} from "../saturation/saturation.component";
+import {HueComponent} from "../hue/hue.component";
+import {AlphaComponent} from "../alpha/alpha.component";
 
 
 @Component({
@@ -8,7 +12,7 @@ import {HsvaColor} from '../../../interfaces/hsva-color.interface';
     templateUrl: './alpha-color-picker.component.html',
     styleUrls: ['./alpha-color-picker.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CommonModule, SaturationComponent, HueComponent, AlphaComponent],
 })
 export class AlphaColorPickerComponent {
   @Input() color: HsvaColor = defaultHsvaColor;

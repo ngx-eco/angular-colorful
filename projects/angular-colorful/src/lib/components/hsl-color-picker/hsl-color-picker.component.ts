@@ -1,9 +1,11 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {HslColor} from '../../interfaces/hsl-color.interface';
 import {HsvaColor} from '../../interfaces/hsva-color.interface';
 import {ColorModel} from '../../interfaces/color-model.interface';
 import {hslaToHsl, hslaToHsva, hsvaToHsla} from '../../utils/convert';
 import {defaultHslColor, defaultHsvaColor} from '../../utils/constants';
+import {ColorPickerComponent} from "../common/color-picker/color-picker.component";
 
 
 @Component({
@@ -11,7 +13,7 @@ import {defaultHslColor, defaultHsvaColor} from '../../utils/constants';
     templateUrl: './hsl-color-picker.component.html',
     styleUrls: ['./hsl-color-picker.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CommonModule, ColorPickerComponent],
 })
 export class HslColorPickerComponent implements OnChanges, ColorModel<HslColor> {
   @Input() color: HslColor = defaultHslColor;

@@ -1,8 +1,10 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {HsvaColor} from '../../interfaces/hsva-color.interface';
 import {ColorModel} from '../../interfaces/color-model.interface';
 import {hsvaToRgbString, rgbStringToHsva} from '../../utils/convert';
 import {defaultHsvaColor, defaultRgbStringColor} from '../../utils/constants';
+import {ColorPickerComponent} from "../common/color-picker/color-picker.component";
 
 
 @Component({
@@ -10,7 +12,7 @@ import {defaultHsvaColor, defaultRgbStringColor} from '../../utils/constants';
     templateUrl: './rgb-string-color-picker.component.html',
     styleUrls: ['./rgb-string-color-picker.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CommonModule, ColorPickerComponent],
 })
 export class RgbStringColorPickerComponent implements OnChanges, ColorModel<string> {
   @Input() color: string = defaultRgbStringColor;

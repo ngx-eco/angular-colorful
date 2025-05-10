@@ -1,6 +1,9 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {HsvaColor} from '../../../interfaces/hsva-color.interface';
 import {defaultHsvaColor} from '../../../utils/constants';
+import {SaturationComponent} from "../saturation/saturation.component";
+import {HueComponent} from "../hue/hue.component";
 
 
 @Component({
@@ -8,7 +11,7 @@ import {defaultHsvaColor} from '../../../utils/constants';
     templateUrl: './color-picker.component.html',
     styleUrls: ['./color-picker.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CommonModule, SaturationComponent, HueComponent],
 })
 export class ColorPickerComponent {
 

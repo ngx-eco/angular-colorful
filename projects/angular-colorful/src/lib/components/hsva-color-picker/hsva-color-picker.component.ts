@@ -1,7 +1,9 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {defaultHsvaColor} from '../../utils/constants';
 import {HsvaColor} from '../../interfaces/hsva-color.interface';
 import {ColorModel} from '../../interfaces/color-model.interface';
+import {AlphaColorPickerComponent} from "../common/alpha-color-picker/alpha-color-picker.component";
 
 
 @Component({
@@ -9,7 +11,7 @@ import {ColorModel} from '../../interfaces/color-model.interface';
     templateUrl: './hsva-color-picker.component.html',
     styleUrls: ['./hsva-color-picker.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CommonModule, AlphaColorPickerComponent],
 })
 export class HsvaColorPickerComponent implements OnChanges, ColorModel<HsvaColor> {
   @Input() color: HsvaColor = defaultHsvaColor;

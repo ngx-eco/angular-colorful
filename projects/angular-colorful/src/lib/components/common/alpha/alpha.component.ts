@@ -1,8 +1,10 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, Output} from '@angular/core';
+import {CommonModule} from "@angular/common";
 import {hsvaToHslaString} from '../../../utils/convert';
 import {defaultHsvaColor} from '../../../utils/constants';
 import {HsvaColor} from '../../../interfaces/hsva-color.interface';
 import {Interaction} from '../../../interfaces/interaction.interface';
+import {InteractiveComponent} from "../interactive/interactive.component";
 
 
 @Component({
@@ -10,7 +12,7 @@ import {Interaction} from '../../../interfaces/interaction.interface';
     templateUrl: './alpha.component.html',
     styleUrls: ['./alpha.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CommonModule, InteractiveComponent],
 })
 export class AlphaComponent implements DoCheck {
   @Input() color: HsvaColor = defaultHsvaColor;
