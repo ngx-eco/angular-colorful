@@ -12,7 +12,7 @@
         }
       },
       "root": "projects/app",
-      "sourceRoot": "projects/app",
+      "sourceRoot": "projects/app/src",
       "prefix": "app",
       "architect": {
         "build": {
@@ -44,19 +44,27 @@
               },
               {
                 "glob": "**/*",
+                "input": "projects/app/public"
+              },
+              {
+                "glob": "**/*",
                 "input": "projects/app/src/assets",
                 "output": "assets"
-              },
-              "projects/app/public/favicon.ico",
-              "projects/app/public/manifest.webmanifest"
+              }
             ],
             "styles": [
               "node_modules/@ng-doc/app/styles/global.css",
+              "node_modules/@ng-doc/app/styles/themes/dark.css",
               "projects/app/src/styles.scss"
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "@ng-doc/core"
+              "@ng-doc/core",
+              "dayjs",
+              "cytoscape-cose-bilkent",
+              "dompurify",
+              "@braintree/sanitize-url",
+              "elkjs/lib/elk.bundled.js"
             ]
           },
           "configurations": {
@@ -64,13 +72,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1500kb",
-                  "maximumError": "3mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "3kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all",
@@ -79,8 +87,7 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -98,10 +105,7 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "app:build"
-          }
+          "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -113,9 +117,15 @@
             "tsConfig": "projects/app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/app/public/favicon.ico",
-              "projects/app/src/assets",
-              "projects/app/public/manifest.webmanifest"
+              {
+                "glob": "**/*",
+                "input": "projects/app/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/app/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "projects/app/src/styles.scss"

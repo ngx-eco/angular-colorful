@@ -1,3 +1,7 @@
+/*
+ * Public API Surface of angular-colorful
+ */
+
 // Components
 export * from './lib/components/hex-color-picker/hex-color-picker.component';
 export * from './lib/components/rgb-color-picker/rgb-color-picker.component';

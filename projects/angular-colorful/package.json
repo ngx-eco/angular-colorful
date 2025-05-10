@@ -13,11 +13,11 @@
     "url": "https://github.com/ngx-eco/angular-colorful/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^17.0.0",
-    "@angular/core": "^17.0.0"
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "tslib": "^2.4.0"
+    "tslib": "^2.3.0"
   },
   "keywords": [
     "angular",

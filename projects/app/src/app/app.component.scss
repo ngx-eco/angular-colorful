@@ -35,6 +35,18 @@
   }
 }
 
+.link-icon {
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
+.link-text {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
 .controls {
   display: flex;
 

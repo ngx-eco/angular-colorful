@@ -6,49 +6,20 @@
   <ng-doc-navbar [glassEffect]="false" [search]="!isLandingPage" [hamburger]="!isLandingPage">
 
     <div ngDocNavbarLeft>
-<!--      <ng-template-->
-<!--        #ngDocMediaQuery="ngDocMediaQuery"-->
-<!--        [ngDocMediaQuery]="[ngDocMediaQuery.breakpoints.XSmall]">-->
-<!--        <a-->
-<!--          size="large"-->
-<!--          routerLink="/"-->
-<!--          ng-doc-button-icon-->
-<!--          ngDocTooltip="Go main page">-->
-<!--          <ng-doc-icon [size]="24" icon="home"/>-->
-<!--        </a>-->
-<!--      </ng-template>-->
-      <ng-template>
-        <a
-          size="large"
-          routerLink="/"
-          ng-doc-button-icon
-          ngDocTooltip="Go main page">
-          <ng-doc-icon [size]="24" icon="home"/>
-        </a>
-      </ng-template>
-<!--      <ng-template-->
-<!--        #ngDocMediaQuery="ngDocMediaQuery"-->
-<!--        [ngDocMediaQuery]="[-->
-<!--	  	ngDocMediaQuery.breakpoints.Small,-->
-<!--			ngDocMediaQuery.breakpoints.Medium,-->
-<!--			ngDocMediaQuery.breakpoints.Large,-->
-<!--			ngDocMediaQuery.breakpoints.XLarge-->
-<!--		]">-->
-<!--        <a-->
-<!--          class="brand"-->
-<!--          routerLink="/">-->
-<!--          <span class="brand-angular">Angular</span>-->
-<!--          <span class="brand-colorful">Colorful</span>-->
-<!--        </a>-->
-<!--      </ng-template>-->
-      <ng-template>
-        <a
-          class="brand"
-          routerLink="/">
-          <span class="brand-angular">Angular</span>
-          <span class="brand-colorful">Colorful</span>
-        </a>
-      </ng-template>
+      <a
+        size="large"
+        routerLink="/"
+        class="link-icon"
+        ng-doc-button-icon
+        ngDocTooltip="Go main page">
+        <ng-doc-icon [size]="24" customIcon="home"/>
+      </a>
+      <a
+        routerLink="/"
+        class="brand link-text">
+        <span class="brand-angular">Angular</span>
+        <span class="brand-colorful">Colorful</span>
+      </a>
     </div>
 
     <div ngDocNavbarRight>
@@ -84,5 +55,5 @@
 </ng-doc-root>
 
 <ng-template #footerContent>
-  <div class="ng-doc-footer">MIT © 2023 Filipp Chibisov</div>
+  <div class="ng-doc-footer">MIT © 2025 Filipp Chibisov</div>
 </ng-template>

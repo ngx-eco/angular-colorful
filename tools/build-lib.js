@@ -5,7 +5,7 @@ const shell = require('shelljs');
 // const chalk = require('chalk');
 
 
-const LIB_DIR = `dist/lib`;
+const LIB_DIR = `dist/angular-colorful`;
 
 
 const FILES = [

@@ -13,17 +13,15 @@
     "url": "https://github.com/ngx-eco/angular-colorful/issues"
   },
   "scripts": {
+    "ng": "ng",
     "start": "ng serve app",
-    "build": "ng build app --configuration production",
+    "build": "ng build app",
+    "watch": "ng build app --watch --configuration development",
     "test": "ng test app",
-    "lint": "ng lint app",
-    "lint:fix": "ng lint app --fix",
     "lib:start": "ng build angular-colorful --watch",
     "lib:build": "ng build angular-colorful --configuration production && node tools/build-lib.js",
     "lib:test": "ng test angular-colorful",
-    "lib:lint": "ng lint angular-colorful",
-    "lib:lint:fix": "ng lint angular-colorful --fix",
-    "lib:publish": "npm run lib:build && cd dist/lib && npm pack && npm publish",
+    "lib:publish": "npm run lib:build && cd dist/angular-colorful && npm pack && npm publish",
     "update-ng": "ng update @angular/cli"
   },
   "dependencies": {
@@ -41,7 +39,7 @@
     "@ng-doc/core": "19.2.0",
     "@ng-doc/ui-kit": "19.2.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.6.3",
+    "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
@@ -49,15 +47,15 @@
     "@angular/cli": "^19.2.10",
     "@angular/compiler-cli": "^19.2.10",
     "@types/jasmine": "~5.1.0",
-    "jasmine-core": "~5.1.0",
-    "karma": "~6.4.3",
+    "jasmine-core": "~5.6.0",
+    "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "ng-packagr": "^19.2.2",
-    "shelljs": "^0.8.5",
-    "typescript": "~5.8.3"
+    "ng-packagr": "^19.2.0",
+    "shelljs": "^0.10.0",
+    "typescript": "~5.7.2"
   },
   "keywords": [
     "angular",
