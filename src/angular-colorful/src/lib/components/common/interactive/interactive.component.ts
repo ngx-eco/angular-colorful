@@ -7,9 +7,10 @@ import {Interaction} from '../../../interfaces/interaction.interface';
 
 
 @Component({
-  selector: 'interactive',
-  templateUrl: './interactive.component.html',
-  styleUrls: ['./interactive.component.scss'],
+    selector: 'interactive',
+    templateUrl: './interactive.component.html',
+    styleUrls: ['./interactive.component.scss'],
+    standalone: false
 })
 export class InteractiveComponent implements OnInit {
 

@@ -4,10 +4,11 @@ import {defaultHsvaColor} from '../../../utils/constants';
 
 
 @Component({
-  selector: 'color-picker',
-  templateUrl: './color-picker.component.html',
-  styleUrls: ['./color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'color-picker',
+    templateUrl: './color-picker.component.html',
+    styleUrls: ['./color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ColorPickerComponent {
 

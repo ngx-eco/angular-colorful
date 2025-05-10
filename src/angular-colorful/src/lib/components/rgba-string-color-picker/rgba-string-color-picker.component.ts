@@ -6,10 +6,11 @@ import {hsvaToRgbaString, rgbaStringToHsva} from '../../utils/convert';
 
 
 @Component({
-  selector: 'rgba-string-color-picker',
-  templateUrl: './rgba-string-color-picker.component.html',
-  styleUrls: ['./rgba-string-color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'rgba-string-color-picker',
+    templateUrl: './rgba-string-color-picker.component.html',
+    styleUrls: ['./rgba-string-color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class RgbaStringColorPickerComponent implements OnChanges, ColorModel<string> {
   @Input() color: string = defaultRgbaStringColor;

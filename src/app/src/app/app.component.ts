@@ -12,24 +12,23 @@ import {
 
 
 @Component({
-  standalone: true,
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-    RouterModule,
-    NgDocRootComponent,
-    NgDocIconComponent,
-    NgDocNavbarComponent,
-    NgDocTooltipDirective,
-    NgDocSidebarComponent,
-    NgDocButtonIconComponent,
-    NgDocMediaQueryDirective,
-    NgDocThemeToggleComponent,
-  ],
-  animations: [preventInitialChildAnimations],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        CommonModule,
+        RouterModule,
+        NgDocRootComponent,
+        NgDocIconComponent,
+        NgDocNavbarComponent,
+        NgDocTooltipDirective,
+        NgDocSidebarComponent,
+        NgDocButtonIconComponent,
+        NgDocMediaQueryDirective,
+        NgDocThemeToggleComponent,
+    ],
+    animations: [preventInitialChildAnimations]
 })
 export class AppComponent {
   @HostBinding('attr.data-ng-doc-is-landing') get isLandingPage(): boolean {

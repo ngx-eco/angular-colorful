@@ -5,10 +5,11 @@ import {ColorModel} from '../../interfaces/color-model.interface';
 
 
 @Component({
-  selector: 'hsva-color-picker',
-  templateUrl: './hsva-color-picker.component.html',
-  styleUrls: ['./hsva-color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'hsva-color-picker',
+    templateUrl: './hsva-color-picker.component.html',
+    styleUrls: ['./hsva-color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HsvaColorPickerComponent implements OnChanges, ColorModel<HsvaColor> {
   @Input() color: HsvaColor = defaultHsvaColor;

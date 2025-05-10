@@ -7,10 +7,11 @@ import {defaultHslColor, defaultHsvaColor} from '../../utils/constants';
 
 
 @Component({
-  selector: 'hsl-color-picker',
-  templateUrl: './hsl-color-picker.component.html',
-  styleUrls: ['./hsl-color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'hsl-color-picker',
+    templateUrl: './hsl-color-picker.component.html',
+    styleUrls: ['./hsl-color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HslColorPickerComponent implements OnChanges, ColorModel<HslColor> {
   @Input() color: HslColor = defaultHslColor;

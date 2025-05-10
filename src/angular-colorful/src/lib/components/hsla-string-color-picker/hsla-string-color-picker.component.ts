@@ -6,10 +6,11 @@ import {defaultHslaStringColor, defaultHsvaColor} from '../../utils/constants';
 
 
 @Component({
-  selector: 'hsla-string-color-picker',
-  templateUrl: './hsla-string-color-picker.component.html',
-  styleUrls: ['./hsla-string-color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'hsla-string-color-picker',
+    templateUrl: './hsla-string-color-picker.component.html',
+    styleUrls: ['./hsla-string-color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HslaStringColorPickerComponent implements OnChanges, ColorModel<string> {
   @Input() color: string = defaultHslaStringColor;

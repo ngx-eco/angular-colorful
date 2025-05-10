@@ -6,10 +6,11 @@ import {Interaction} from '../../../interfaces/interaction.interface';
 
 
 @Component({
-  selector: 'alpha',
-  templateUrl: './alpha.component.html',
-  styleUrls: ['./alpha.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'alpha',
+    templateUrl: './alpha.component.html',
+    styleUrls: ['./alpha.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AlphaComponent implements DoCheck {
   @Input() color: HsvaColor = defaultHsvaColor;

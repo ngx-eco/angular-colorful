@@ -5,15 +5,14 @@ import {AngularColorfulModule} from 'angular-colorful';
 import {ColorService} from '../../../core/services/color.service';
 
 @Component({
-  standalone: true,
-  selector: 'app-landing-header',
-  templateUrl: './landing-header.component.html',
-  styleUrls: ['./landing-header.component.scss'],
-  imports: [
-    CommonModule,
-    RouterModule,
-    AngularColorfulModule,
-  ]
+    selector: 'app-landing-header',
+    templateUrl: './landing-header.component.html',
+    styleUrls: ['./landing-header.component.scss'],
+    imports: [
+        CommonModule,
+        RouterModule,
+        AngularColorfulModule,
+    ]
 })
 export class LandingHeaderComponent implements OnInit {
 

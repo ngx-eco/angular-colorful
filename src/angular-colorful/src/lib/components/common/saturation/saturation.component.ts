@@ -6,10 +6,11 @@ import {Interaction} from '../../../interfaces/interaction.interface';
 
 
 @Component({
-  selector: 'saturation',
-  templateUrl: './saturation.component.html',
-  styleUrls: ['./saturation.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'saturation',
+    templateUrl: './saturation.component.html',
+    styleUrls: ['./saturation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class SaturationComponent implements DoCheck {
   @Input() color: HsvaColor = defaultHsvaColor;

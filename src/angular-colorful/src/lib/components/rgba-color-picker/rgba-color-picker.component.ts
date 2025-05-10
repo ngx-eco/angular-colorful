@@ -7,10 +7,11 @@ import {defaultHsvaColor, defaultRgbaColor} from '../../utils/constants';
 
 
 @Component({
-  selector: 'rgba-color-picker',
-  templateUrl: './rgba-color-picker.component.html',
-  styleUrls: ['./rgba-color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'rgba-color-picker',
+    templateUrl: './rgba-color-picker.component.html',
+    styleUrls: ['./rgba-color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class RgbaColorPickerComponent implements OnChanges, ColorModel<RgbaColor> {
   @Input() color: RgbaColor = defaultRgbaColor;

@@ -6,10 +6,11 @@ import {defaultHsvaColor, defaultRgbStringColor} from '../../utils/constants';
 
 
 @Component({
-  selector: 'rgb-string-color-picker',
-  templateUrl: './rgb-string-color-picker.component.html',
-  styleUrls: ['./rgb-string-color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'rgb-string-color-picker',
+    templateUrl: './rgb-string-color-picker.component.html',
+    styleUrls: ['./rgb-string-color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class RgbStringColorPickerComponent implements OnChanges, ColorModel<string> {
   @Input() color: string = defaultRgbStringColor;

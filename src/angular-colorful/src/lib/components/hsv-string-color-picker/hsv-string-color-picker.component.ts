@@ -6,10 +6,11 @@ import {defaultHsvaColor, defaultHsvStringColor} from '../../utils/constants';
 
 
 @Component({
-  selector: 'hsv-string-color-picker',
-  templateUrl: './hsv-string-color-picker.component.html',
-  styleUrls: ['./hsv-string-color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'hsv-string-color-picker',
+    templateUrl: './hsv-string-color-picker.component.html',
+    styleUrls: ['./hsv-string-color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HsvStringColorPickerComponent implements OnChanges, ColorModel<string> {
   @Input() color: string = defaultHsvStringColor;

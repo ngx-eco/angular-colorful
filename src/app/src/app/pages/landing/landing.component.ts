@@ -5,16 +5,15 @@ import {RouterModule} from '@angular/router';
 import {LandingHeaderComponent} from './landing-header/landing-header.component';
 
 @Component({
-  standalone: true,
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss'],
-  imports: [
-    CommonModule,
-    RouterModule,
-    AngularColorfulModule,
-    LandingHeaderComponent,
-  ]
+    selector: 'app-landing',
+    templateUrl: './landing.component.html',
+    styleUrls: ['./landing.component.scss'],
+    imports: [
+        CommonModule,
+        RouterModule,
+        AngularColorfulModule,
+        LandingHeaderComponent,
+    ]
 })
 export class LandingComponent {
 

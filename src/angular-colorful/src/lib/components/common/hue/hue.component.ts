@@ -6,10 +6,11 @@ import {Interaction} from '../../../interfaces/interaction.interface';
 
 
 @Component({
-  selector: 'hue',
-  templateUrl: './hue.component.html',
-  styleUrls: ['./hue.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'hue',
+    templateUrl: './hue.component.html',
+    styleUrls: ['./hue.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HueComponent implements DoCheck {
   @Input() color: HsvaColor = defaultHsvaColor;

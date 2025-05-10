@@ -6,10 +6,11 @@ import {defaultHexStringColor, defaultHsvaColor} from '../../utils/constants';
 
 
 @Component({
-  selector: 'hex-color-picker',
-  templateUrl: './hex-color-picker.component.html',
-  styleUrls: ['./hex-color-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'hex-color-picker',
+    templateUrl: './hex-color-picker.component.html',
+    styleUrls: ['./hex-color-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HexColorPickerComponent implements OnChanges, ColorModel<string> {
   @Input() color: string = defaultHexStringColor;
