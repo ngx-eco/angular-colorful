@@ -47,8 +47,8 @@
                 "input": "projects/app/src/assets",
                 "output": "assets"
               },
-              "projects/app/src/favicon.ico",
-              "projects/app/manifest.webmanifest"
+              "projects/app/public/favicon.ico",
+              "projects/app/public/manifest.webmanifest"
             ],
             "styles": [
               "node_modules/@ng-doc/app/styles/global.css",
@@ -113,9 +113,9 @@
             "tsConfig": "projects/app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/app/src/favicon.ico",
+              "projects/app/public/favicon.ico",
               "projects/app/src/assets",
-              "projects/app/manifest.webmanifest"
+              "projects/app/public/manifest.webmanifest"
             ],
             "styles": [
               "projects/app/src/styles.scss"
