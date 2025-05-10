@@ -6,7 +6,7 @@ export const api: NgDocApi = {
     {
       name: 'angular-colorful',
       route: 'docs/angular-colorful',
-      include: 'src/angular-colorful/**/*.ts',
+      include: 'projects/angular-colorful/**/*.ts',
     },
   ],
 };

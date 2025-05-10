@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://fil0157.github.io/angular-colorful">
-    <img src="src/app/src/assets/design.png" width="242" height="242" alt="angular-colorful" />
+    <img src="projects/app/src/assets/design.png" width="242" height="242" alt="angular-colorful" />
   </a>
 </div>
 

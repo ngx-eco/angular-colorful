@@ -18,20 +18,20 @@
           "standalone": true
         }
       },
-      "root": "src/app",
-      "sourceRoot": "src/app",
+      "root": "projects/app",
+      "sourceRoot": "projects/app",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@ng-doc/builder:application",
           "options": {
             "outputPath": "dist/app",
-            "index": "src/app/src/index.html",
-            "browser": "src/app/src/main.ts",
+            "index": "projects/app/src/index.html",
+            "browser": "projects/app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "src/app/tsconfig.app.json",
+            "tsConfig": "projects/app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
@@ -51,15 +51,15 @@
               },
               {
                 "glob": "**/*",
-                "input": "src/app/src/assets",
+                "input": "projects/app/src/assets",
                 "output": "assets"
               },
-              "src/app/src/favicon.ico",
-              "src/app/manifest.webmanifest"
+              "projects/app/src/favicon.ico",
+              "projects/app/manifest.webmanifest"
             ],
             "styles": [
               "node_modules/@ng-doc/app/styles/global.css",
-              "src/app/src/styles.scss"
+              "projects/app/src/styles.scss"
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
@@ -117,15 +117,15 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "src/app/tsconfig.spec.json",
+            "tsConfig": "projects/app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/app/src/favicon.ico",
-              "src/app/src/assets",
-              "src/app/manifest.webmanifest"
+              "projects/app/src/favicon.ico",
+              "projects/app/src/assets",
+              "projects/app/manifest.webmanifest"
             ],
             "styles": [
-              "src/app/src/styles.scss"
+              "projects/app/src/styles.scss"
             ],
             "scripts": []
           }
@@ -134,21 +134,21 @@
     },
     "angular-colorful": {
       "projectType": "library",
-      "root": "src/angular-colorful",
-      "sourceRoot": "src/angular-colorful/src",
+      "root": "projects/angular-colorful",
+      "sourceRoot": "projects/angular-colorful/src",
       "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "src/angular-colorful/ng-package.json"
+            "project": "projects/angular-colorful/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "src/angular-colorful/tsconfig.lib.prod.json"
+              "tsConfig": "projects/angular-colorful/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "src/angular-colorful/tsconfig.lib.json"
+              "tsConfig": "projects/angular-colorful/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -156,7 +156,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "src/angular-colorful/tsconfig.spec.json",
+            "tsConfig": "projects/angular-colorful/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
