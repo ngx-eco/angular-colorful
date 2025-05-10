@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "src",
+  "newProjectRoot": "projects",
   "projects": {
     "app": {
       "projectType": "application",
@@ -74,7 +74,7 @@
                 }
               ],
               "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "serviceWorker": "projects/app/ngsw-config.json"
             },
             "development": {
               "optimization": false,

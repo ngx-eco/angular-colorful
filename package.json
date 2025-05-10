@@ -24,8 +24,7 @@
     "lib:lint": "ng lint angular-colorful",
     "lib:lint:fix": "ng lint angular-colorful --fix",
     "lib:publish": "npm run lib:build && cd dist/lib && npm pack && npm publish",
-    "update-deps": "ng update @angular/cli",
-    "ngcc": "ngcc"
+    "update-ng": "ng update @angular/cli"
   },
   "dependencies": {
     "@angular/animations": "^19.2.10",

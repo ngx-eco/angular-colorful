@@ -41,5 +41,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-## NgDoc folder
+## NgDoc files
 /ng-doc
