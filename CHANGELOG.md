@@ -1,6 +1,6 @@
 # Changelog
 
-## 7.0.0 (June 6, 2024)
+## 7.0.0 (May 19, 2025)
 - Angular updated (v19.2.10)
 
 ### Breaking Changes
